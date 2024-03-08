@@ -1,0 +1,53 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { SEO } from "astro-seo";
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="bg-light-2 text-brand-1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={title}
+      titleDefault="Fantom"
+      description={description}
+      openGraph={{
+        basic: {
+          title: "Fantom | Web Design & Development",
+          type: "website",
+          image: "https://fantom.netlify.app/nnf-og.png",
+          url: "https://fantom.netlify.app/",
+        },
+      }}
+    />
+    <ViewTransitions />
+  </head>
+  <body class="p-0 m-0">
+    <slot />
+    <style is:global>
+      :root {
+        /* Spacing variables */
+        --page-main: var(--page-desktop);
+        --page-desktop: 1.5rem;
+        --page-tablet: 1.25rem;
+        --page-mobile: 1rem;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </body>
+</html>
