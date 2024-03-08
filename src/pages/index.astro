@@ -14,7 +14,7 @@ import Navbar from "../components/Navbar.astro";
         <div
           class="col-span-7 grid grid-rows-[auto,1fr,auto] pointer-events-auto">
           <Navbar />
-          <div class="py-16">
+          <div id="context" class="py-16">
             <p class="leading-loose max-w-prose">
               With a shared commitment to creativity and innovation, we embark
               on a mission to transform your brand's digital presence into an
@@ -22,11 +22,25 @@ import Navbar from "../components/Navbar.astro";
               reachable and user friendly interfaces.
             </p>
           </div>
-          <h1 class="text-9xl font-normal">Fantom</h1>
+          <div class="min-h-16">
+            <h1 id="fantom" class="text-9xl font-normal leading-[0] gsap-wc">
+              Fantom
+            </h1>
+            <h2
+              id="projects-title"
+              class="text-9xl font-normal leading-[0] gsap-wc">
+              Projects
+            </h2>
+            <h2
+              id="contact-title"
+              class="text-9xl font-normal leading-[0] gsap-wc">
+              Contact
+            </h2>
+          </div>
         </div>
       </div>
     </header>
-    <main class="grid grid-cols-12">
+    <main id="main" class="grid grid-cols-12">
       <section class="col-span-5 col-start-8">
         <div class="mb-8">
           <div class="h-96 bg-brand-1 mb-4"></div>
@@ -102,3 +116,5 @@ import Navbar from "../components/Navbar.astro";
     </main>
   </div>
 </Layout>
+
+<script src="../scrollTimeline.js"></script>

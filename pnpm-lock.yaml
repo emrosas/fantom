@@ -20,6 +20,12 @@ dependencies:
   astro-seo:
     specifier: ^0.8.3
     version: 0.8.3(typescript@5.4.2)
+  gsap:
+    specifier: ^3.12.5
+    version: 3.12.5
+  split-text-js:
+    specifier: ^1.0.3
+    version: 1.0.3
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -2077,6 +2083,10 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
+  /gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+    dev: false
+
   /has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
@@ -3740,6 +3750,10 @@ packages:
 
   /space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
+    dev: false
+
+  /split-text-js@1.0.3:
+    resolution: {integrity: sha512-M27Ou2Vje/d5PK7CMgZGjVBqjRwRw6pwS6j1/tI0utkQ/LBU4Jugc7bMBqyd2bPjgZDu4z6KYfT2lkrNUCvVXA==}
     dev: false
 
   /sprintf-js@1.0.3:
