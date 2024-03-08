@@ -2,6 +2,9 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    fontFamily: {
+      body: ["itc-avant-garde-gothic-pro", "sans-serif"],
+    },
     extend: {
       colors: {
         "dark-1": "#060623",

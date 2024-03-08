@@ -10,11 +10,12 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="bg-light-2 text-brand-1">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/zmd4nhu.css" />
     <meta name="generator" content={Astro.generator} />
     <SEO
       title={title}
@@ -31,9 +32,30 @@ const { title, description } = Astro.props;
     />
     <ViewTransitions />
   </head>
-  <body class="p-0 m-0">
+  <body class="p-0 m-0 bg-light-2 text-brand-1 font-body">
     <slot />
     <style is:global>
+      @font-face {
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+        src: url("/fonts/DistantGalaxy.woff") format("woff");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+        src: url("/fonts/DistantGalaxy.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+        src: url("/fonts/DistantGalaxy.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
       :root {
         /* Spacing variables */
         --page-main: var(--page-desktop);
