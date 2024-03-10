@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+const { image } = Astro.props;
+---
+
+<li class="mb-8">
+  <Image
+    src={image}
+    alt="Project Mockup"
+    class="w-full aspect-square object-cover rounded-lg"
+  />
+  <p class="hidden">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos facilis magni
+    quis similique placeat optio laudantium distinctio consectetur molestias!
+    Asperiores cum voluptatibus provident nostrum et vero reiciendis, itaque
+    error.
+  </p>
+</li>

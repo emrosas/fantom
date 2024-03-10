@@ -3,6 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Radio from "../components/Radio.astro";
 import Button from "../components/Button.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+//Image imports
+import lp from "../assets/images/lp.jpg";
+import twc from "../assets/images/twc.jpg";
+import lpdlp from "../assets/images/lpdlp.jpg";
+import pgc from "../assets/images/pgc.jpg";
+import herrmat from "../assets/images/herrmat.jpg";
 ---
 
 <Layout
@@ -63,19 +71,13 @@ import Button from "../components/Button.astro";
           </div>
         </section>
         <section id="projects" class="gsap-section" gsap="projects">
-          {
-            Array.from({ length: 5 }).map((_, i) => (
-              <div class="mb-8">
-                <div class="w-full aspect-[4/5] bg-emerald-600 mb-4 rounded-lg" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  facilis magni quis similique placeat optio laudantium
-                  distinctio consectetur molestias! Asperiores cum voluptatibus
-                  provident nostrum et vero reiciendis, itaque error.
-                </p>
-              </div>
-            ))
-          }
+          <ul>
+            <ProjectCard image={lp} />
+            <ProjectCard image={twc} } />
+            <ProjectCard image={lpdlp} />
+            <ProjectCard image={pgc} />
+            <ProjectCard image={herrmat} />
+          </ul>
         </section>
         <section id="contact" class="gsap-section" gsap="contact">
           <form
