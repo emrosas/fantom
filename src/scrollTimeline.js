@@ -1,18 +1,9 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitTextJS from "split-text-js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-let loadAnimation = gsap.timeline({
-  // scrollTrigger: {
-  //   trigger: ".fantom",
-  //   start: "top center",
-  //   end: "bottom center",
-  //   scrub: 1,
-  //   markers: true,
-  // },
-});
+let loadAnimation = gsap.timeline();
 
 loadAnimation.from("#nav", {
   opacity: 0,
@@ -52,7 +43,7 @@ loadAnimation.from(
   "-=0.35"
 );
 
-function animationCreator(el1, el2, trigger) {
+function animationCreator(trigger, title1, title2, context1, context2) {
   let animation = gsap.timeline({
     scrollTrigger: {
       trigger: trigger,
@@ -63,7 +54,7 @@ function animationCreator(el1, el2, trigger) {
     },
   });
 
-  animation.to(el1, {
+  animation.to(title1, {
     translateY: -50,
     rotateX: 90,
     opacity: 0,
@@ -71,7 +62,7 @@ function animationCreator(el1, el2, trigger) {
     ease: "sine.inOut",
   });
   animation.fromTo(
-    el2,
+    title2,
     { opacity: 0, translateY: 50, rotateX: -90 },
     {
       display: "block",
@@ -83,10 +74,38 @@ function animationCreator(el1, el2, trigger) {
     },
     "<"
   );
+  animation.to(
+    context1,
+    { opacity: 0, translateX: "-100%", duration: 0.3, ease: "sine.inOut" },
+    "<"
+  );
+  animation.fromTo(
+    context2,
+    { opacity: 0, translateX: "-100%" },
+    {
+      opacity: 1,
+      duration: 0.3,
+      translateX: "0%",
+      ease: "sine.inOut",
+    },
+    "<"
+  );
 }
 
-animationCreator("#fantom", "#projects-title", "#projects");
-animationCreator("#projects-title", "#contact-title", "#contact");
+animationCreator(
+  "#projects",
+  "#fantom",
+  "#projects-title",
+  "#context-fantom",
+  "#context-projects"
+);
+animationCreator(
+  "#contact",
+  "#projects-title",
+  "#contact-title",
+  "#context-projects",
+  "#context-contact"
+);
 
 const titlesDiv = document.querySelector("#titles");
 const children = titlesDiv.querySelectorAll("*");
