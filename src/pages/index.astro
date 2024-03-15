@@ -5,6 +5,8 @@ import Radio from "../components/Radio.astro";
 import Button from "../components/Button.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
+import { projects } from "../utils/projects";
+
 //Image imports
 import lp from "../assets/images/lp.jpg";
 import twc from "../assets/images/twc.jpg";
@@ -34,13 +36,16 @@ import herrmat from "../assets/images/herrmat.jpg";
               </p>
               <Button text="Start Project" buttonType="link" href="/#contact" />
             </div>
-            <div id="context-projects" class="absolute inset-0 opacity-0">
-              <p class="leading-loose max-w-prose mb-8">
-                Here we will add some context about the <span class="font-bold"
-                  >PROJECT</span
-                > section.
-              </p>
-            </div>
+            <ul id="context-projects" class="absolute inset-0 opacity-0">
+              {
+                projects.map((project) => (
+                  <li class="absolute inset-0 opacity-5" id={project.name}>
+                    <h3 class="text-2xl mb-4">{project.name}</h3>
+                    <p>{project.description}</p>
+                  </li>
+                ))
+              }
+            </ul>
             <div id="context-contact" class="absolute inset-0 opacity-0">
               <p class="leading-loose max-w-prose mb-8">
                 Here we will add some context about the <span class="font-bold"
@@ -59,7 +64,7 @@ import herrmat from "../assets/images/herrmat.jpg";
             <h2
               id="projects-title"
               class="text-9xl font-normal leading-[0] gsap-wc"
-              gsap="projects">
+              value="projects">
               Projects
             </h2>
             <h2
@@ -89,11 +94,18 @@ import herrmat from "../assets/images/herrmat.jpg";
         </section>
         <section id="projects" class="gsap-section" gsap="projects">
           <ul>
-            <ProjectCard image={lp} />
+            {
+              projects.map((project) => (
+                <li class="pb-8 project-card" id={project.name}>
+                  <div class="w-full aspect-square object-cover rounded-lg bg-brand-1" />
+                </li>
+              ))
+            }
+            <!-- <ProjectCard image={lp} />
             <ProjectCard image={twc} } />
             <ProjectCard image={lpdlp} />
             <ProjectCard image={pgc} />
-            <ProjectCard image={herrmat} />
+            <ProjectCard image={herrmat} /> -->
           </ul>
         </section>
         <section id="contact" class="gsap-section" gsap="contact">

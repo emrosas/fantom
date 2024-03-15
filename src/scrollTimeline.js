@@ -145,3 +145,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function projectContextAnimation(projectCard) {
+  const projectContext = document
+    .querySelector("#context-projects")
+    .querySelector(`[id="${projectCard.id}"]`);
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: projectCard,
+      start: "top center",
+      end: "bottom center",
+      toggleActions: "play reverse play reverse",
+      markers: true,
+    },
+  });
+
+  tl.fromTo(
+    projectContext,
+    { opacity: 0, translateY: 50 },
+    { opacity: 1, translateY: 0, duration: 0.3, ease: "sine.inOut" }
+  );
+}
+
+const projectCards = document.querySelectorAll(".project-card");
+
+projectCards.forEach((projectCard) => {
+  projectContextAnimation(projectCard);
+});
+
+projectCards.forEach((projectCard) => {
+  gsap.to(projectCard, {
+    scrollTrigger: {
+      trigger: projectCard,
+      start: "top center", // when the top of the section hits the center of the viewport
+      end: "bottom center", // when the bottom of the section hits the center of the viewport
+      onEnter: () => console.log(`entering ${projectCard.id}`),
+      onLeave: () => console.log(`exiting ${projectCard.id}`),
+    },
+  });
+});
