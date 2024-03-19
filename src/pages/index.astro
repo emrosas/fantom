@@ -4,15 +4,9 @@ import Navbar from "../components/Navbar.astro";
 import Radio from "../components/Radio.astro";
 import Button from "../components/Button.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import ProjectContext from "../components/ProjectContext.astro";
 
 import { projects } from "../utils/projects";
-
-//Image imports
-import lp from "../assets/images/lp.jpg";
-import twc from "../assets/images/twc.jpg";
-import lpdlp from "../assets/images/lpdlp.jpg";
-import pgc from "../assets/images/pgc.jpg";
-import herrmat from "../assets/images/herrmat.jpg";
 ---
 
 <Layout
@@ -36,16 +30,7 @@ import herrmat from "../assets/images/herrmat.jpg";
               </p>
               <Button text="Start Project" buttonType="link" href="/#contact" />
             </div>
-            <ul id="context-projects" class="absolute inset-0 opacity-0">
-              {
-                projects.map((project) => (
-                  <li class="absolute inset-0 opacity-5" id={project.name}>
-                    <h3 class="text-2xl mb-4">{project.name}</h3>
-                    <p>{project.description}</p>
-                  </li>
-                ))
-              }
-            </ul>
+
             <div id="context-contact" class="absolute inset-0 opacity-0">
               <p class="leading-loose max-w-prose mb-8">
                 Here we will add some context about the <span class="font-bold"
@@ -53,12 +38,23 @@ import herrmat from "../assets/images/herrmat.jpg";
                 > section.
               </p>
             </div>
+            <ul id="context-projects" class="absolute inset-0 opacity-0">
+              {
+                projects.map((project) => (
+                  <ProjectContext
+                    name={project.name}
+                    description={project.description}
+                    tags={project.tags}
+                  />
+                ))
+              }
+            </ul>
           </div>
           <div id="titles" class="min-h-16">
             <h1
               id="fantom"
               gsap="about"
-              class="text-9xl font-normal leading-[0] gsap-wc">
+              class="text-9xl font-bold uppercase leading-[0] gsap-wc">
               Fantom
             </h1>
             <h2
@@ -79,7 +75,7 @@ import herrmat from "../assets/images/herrmat.jpg";
     </header>
     <main id="main" class="grid grid-cols-12">
       <div class="col-span-5 col-start-8">
-        <section id="about" class="gsap-section" gsap="about">
+        <section id="about" class="gsap-section pb-8" gsap="about">
           <div class="mb-8">
             <div class="h-96 bg-brand-1 mb-4 rounded-lg"></div>
             <p>
@@ -108,7 +104,7 @@ import herrmat from "../assets/images/herrmat.jpg";
             <ProjectCard image={herrmat} /> -->
           </ul>
         </section>
-        <section id="contact" class="gsap-section" gsap="contact">
+        <section id="contact" class="gsap-section pt-8" gsap="contact">
           <form
             action="https://api.web3forms.com/submit"
             method="POST"
