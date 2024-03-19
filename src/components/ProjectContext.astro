@@ -1,7 +1,7 @@
 ---
 import { type Project } from "../utils/projects";
 
-const { name, tags, description } = Astro.props as Project;
+const { name, tags, description, ...Props } = Astro.props as Project;
 ---
 
 <li class="absolute inset-0 opacity-5 mt-16" id={name}>

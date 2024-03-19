@@ -7,6 +7,8 @@ import ProjectCard from "../components/ProjectCard.astro";
 import ProjectContext from "../components/ProjectContext.astro";
 
 import { projects } from "../utils/projects";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 ---
 
 <Layout
@@ -30,14 +32,6 @@ import { projects } from "../utils/projects";
               </p>
               <Button text="Start Project" buttonType="link" href="/#contact" />
             </div>
-
-            <div id="context-contact" class="absolute inset-0 opacity-0">
-              <p class="leading-loose max-w-prose mb-8">
-                Here we will add some context about the <span class="font-bold"
-                  >CONTACT</span
-                > section.
-              </p>
-            </div>
             <ul id="context-projects" class="absolute inset-0 opacity-0">
               {
                 projects.map((project) => (
@@ -48,6 +42,28 @@ import { projects } from "../utils/projects";
                   />
                 ))
               }
+            </ul>
+            <ul
+              id="context-contact"
+              class="absolute inset-0 opacity-0 flex flex-col gap-8 pt-16">
+              <li class="hover:translate-x-1 hover:text-brand-2 transition-all">
+                <a href="/" class="flex items-center gap-2 text-lg"
+                  ><Icon name="mail" class="size-6" />contact@fantom.studio</a
+                >
+              </li>
+              <li class="hover:translate-x-1 hover:text-brand-2 transition-all">
+                <a href="/" class="flex items-center gap-2 text-lg"
+                  ><Icon
+                    name="instagram"
+                    class="size-6"
+                  />contact@fantom.studio</a
+                >
+              </li>
+              <li class="hover:translate-x-1 hover:text-brand-2 transition-all">
+                <a href="/" class="flex items-center gap-2 text-lg"
+                  ><Icon name="x" class="size-6" />@fantom.studio</a
+                >
+              </li>
             </ul>
           </div>
           <div id="titles" class="min-h-16">
@@ -93,15 +109,16 @@ import { projects } from "../utils/projects";
             {
               projects.map((project) => (
                 <li class="pb-8 project-card" id={project.name}>
-                  <div class="w-full aspect-square object-cover rounded-lg bg-brand-1" />
+                  <Image
+                    src={project.imageSrc}
+                    alt={project.name}
+                    class="w-full aspect-square object-cover rounded-lg"
+                    width={900}
+                    height={800}
+                  />
                 </li>
               ))
             }
-            <!-- <ProjectCard image={lp} />
-            <ProjectCard image={twc} } />
-            <ProjectCard image={lpdlp} />
-            <ProjectCard image={pgc} />
-            <ProjectCard image={herrmat} /> -->
           </ul>
         </section>
         <section id="contact" class="gsap-section pt-8" gsap="contact">

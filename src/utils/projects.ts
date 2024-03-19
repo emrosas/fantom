@@ -3,6 +3,7 @@ export interface Project {
   name: string;
   description: string;
   tags: string[];
+  imageSrc: string;
 }
 
 export const projects = [
@@ -19,6 +20,7 @@ export const projects = [
       "CMS",
       "Dynamic Menu Solution",
     ],
+    imageSrc: "/lp.jpg",
   },
   {
     id: 2,
@@ -32,6 +34,7 @@ export const projects = [
       "Typescript",
       "Dynamic Menu Solution",
     ],
+    imageSrc: "/twc.jpg",
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ export const projects = [
     description:
       "This simple website is both elegant and informative, it aims to provide the user with a quick and easy way to find the location of the bakery and to contact them.",
     tags: ["Web Design", "Web Development", "Astro JS", "React"],
+    imageSrc: "/lpdlp.jpg",
   },
   {
     id: 4,
@@ -46,6 +50,7 @@ export const projects = [
     description:
       "This is a simple, fully responsive web application that allows the user to keep track of score and displays a leaderboard to be used when playing party games with friends.",
     tags: ["UX/UI Design", "Web Development", "React", "Vite", "Zustand"],
+    imageSrc: "/pgc.jpg",
   },
   {
     id: 5,
@@ -59,5 +64,6 @@ export const projects = [
       "CMS",
       "Dynamic Catalog",
     ],
+    imageSrc: "/herrmat.jpg",
   },
 ];

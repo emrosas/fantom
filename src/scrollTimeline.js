@@ -50,7 +50,7 @@ function animationCreator(trigger, title1, title2, context1, context2) {
       start: "top center",
       end: "top center",
       toggleActions: "play none reverse none",
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -156,7 +156,7 @@ function projectContextAnimation(projectCard) {
       start: "top center",
       end: "bottom center",
       toggleActions: "play reverse play reverse",
-      markers: true,
+      // markers: true,
     },
   });
 
