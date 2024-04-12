@@ -1,21 +1,47 @@
 ---
 // Component Imports
 import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
 import { Image } from 'astro:assets';
 
 // Asset Imports
 import brothers from '../assets/brothers.png';
+import logoFull from '../assets/logo-full.svg';
 ---
 
 <Layout
   title="Fantom"
   description="With a shared commitment to creativity and innovation, we embark on a mission to transform your brand's digital presence into an unforgettable experience.">
 <main>
+    <header class="flex p-page bg-brand-1 h-screen bg-gradient-to-r from-brand-1 to-dark-2 text-light-2">
+      <div class="flex-grow mx-auto max-w-screen-2xl flex flex-col items-center justify-between gap-6 relative">
+        <div class="flex flex-col gap-10 w-full">
+          <Image src={logoFull} alt="Fantom" class="w-full" />
+          <ul class="flex items-center justify-between">
+            <li class="text-xl font-medium">Web Design</li>
+            <li class="text-xl font-medium">Web Development</li>
+            <li class="text-xl font-medium">SEO Optimization</li>
+            <li class="text-xl font-medium">E-Commerce</li>
+          </ul>
+        </div>
+        <p class="text-2xl leading-loose absolute bottom-0 left-0 max-w-xl">With a shared commitment to creativity and innovation, we embark on a mission to transform your brand's digital presence into an unforgettable experience.</p>
+        <Navbar />
+      </div>
+    </header>
+    
+    <!-- About Section -->
     <section class="px-page pt-40 pb-20">
       <div class="mx-auto max-w-screen-2xl flex flex-col items-center gap-6 text-center">
         <Image src={brothers} alt="Two brothers side by side with a printer effect; cropped at the shoulders." class="w-96 aspect-video object-contain" />
         <h2 class="font-display text-6xl font-semibold uppercase">We are a couple of brothers who <br> <span class="font-body font-normal text-5xl">Love to create meaningful experiences</span></h2>
         <p class="text-xl leading-loose max-w-prose">We believe intentional design that makes products last. We strive to create unique and unforgettable experiences that make a lasting impression on users and bring immense value to the businesses we work with, we share the importance of unique and holistic design in order to stand out from the crowd.</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="px-page pt-40 pb-20">
+      <div class="mx-auto max-w-screen-2xl flex flex-col items-center gap-6 text-center">
+        <p class="text-xl leading-loose max-w-prose">Here goes the selected projects...</p>
       </div>
     </section>
 </main>
