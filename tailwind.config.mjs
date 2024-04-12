@@ -3,7 +3,8 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      body: ["itc-avant-garde-gothic-pro", "sans-serif"],
+      body: ["Neue-Regrade-Variable", "sans-serif"],
+      display: ['Outfit Variable', 'sans-serif'],
     },
     extend: {
       colors: {
