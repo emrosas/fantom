@@ -1,0 +1,22 @@
+---
+// Component Imports
+import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets';
+
+// Asset Imports
+import brothers from '../assets/brothers.png';
+---
+
+<Layout
+  title="Fantom"
+  description="With a shared commitment to creativity and innovation, we embark on a mission to transform your brand's digital presence into an unforgettable experience.">
+<main>
+    <section class="px-page pt-40 pb-20">
+      <div class="mx-auto max-w-screen-2xl flex flex-col items-center gap-6 text-center">
+        <Image src={brothers} alt="Two brothers side by side with a printer effect; cropped at the shoulders." class="w-96 aspect-video object-contain" />
+        <h2 class="font-display text-6xl font-semibold uppercase">We are a couple of brothers who <br> <span class="font-body font-normal text-5xl">Love to create meaningful experiences</span></h2>
+        <p class="text-xl leading-loose max-w-prose">We believe intentional design that makes products last. We strive to create unique and unforgettable experiences that make a lasting impression on users and bring immense value to the businesses we work with, we share the importance of unique and holistic design in order to stand out from the crowd.</p>
+      </div>
+    </section>
+</main>
+</Layout>

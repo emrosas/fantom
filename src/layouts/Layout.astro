@@ -15,7 +15,6 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://use.typekit.net/zmd4nhu.css" />
     <meta name="generator" content={Astro.generator} />
     <SEO
       title={title}
@@ -35,22 +34,6 @@ const { title, description } = Astro.props;
     <slot />
     <style is:global>
       @font-face {
-        font-family: "itc-avant-garde-gothic-pro", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: "itc-avant-garde-gothic-pro", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "itc-avant-garde-gothic-pro", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-      }
-      @font-face {
         font-family: 'Neue-Regrade-Variable';
         src: url('../fonts/Neue-Regrade-Variable.ttf') format('truetype');
         font-weight: 300 800;
@@ -60,7 +43,7 @@ const { title, description } = Astro.props;
       :root {
         /* Spacing variables */
         --page-main: var(--page-desktop);
-        --page-desktop: 1.5rem;
+        --page-desktop: 3rem;
         --page-tablet: 1.25rem;
         --page-mobile: 1rem;
       }
