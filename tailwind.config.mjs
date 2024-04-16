@@ -4,7 +4,7 @@ export default {
   theme: {
     fontFamily: {
       body: ["Neue-Regrade-Variable", "sans-serif"],
-      display: ['Outfit Variable', 'sans-serif'],
+      display: ["Outfit Variable", "sans-serif"],
     },
     extend: {
       colors: {

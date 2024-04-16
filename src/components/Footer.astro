@@ -1,0 +1,31 @@
+---
+import Container from './Container.astro';
+import { Icon } from 'astro-icon/components';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gradient-to-r from-brand-1 to-dark-2 text-light-2 px-page pt-20 pb-16 relative overflow-clip">
+ <Container>
+    <div class="flex flex-col items-start gap-12 text-start">
+        <div class="flex flex-col gap-4">
+            <h4 class="text-base uppercase">[Follow Us]</h4>
+            <div class="flex gap-12 items-center">
+                <a href="/" class="text-5xl uppercase font-medium font-display">Instagram</a>
+                <a href="/" class="text-5xl uppercase font-medium font-display">Twitter</a>
+            </div>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h4 class="text-base uppercase">[Follow Us]</h4>
+            <div>
+                <a href="/" class="text-3xl font-normal flex gap-4 items-center"><Icon name="mail" class="size-8" />contact@fantom.studio</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-20 opacity-50">
+            <p class="text-base">DESIGNED AND DEVELOPED WITH ❤️ BY FANTOM STUDIO© | { currentYear }</p>
+            <a href="/" class="text-base font-medium flex gap-2 items-center">Back to Top <Icon name="arrow-up" class="size-6 -rotate-90" /></a>
+        </div>
+    </div>
+ </Container>
+    <Icon name="ghost" class="size-[64rem] absolute top-0 right-0 translate-x-1/2 -translate-y-[20rem]" />
+</footer>
