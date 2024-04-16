@@ -1,220 +1,48 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import Radio from "../components/Radio.astro";
-import Button from "../components/Button.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import ProjectContext from "../components/ProjectContext.astro";
+// Component Imports
+import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
+import { Image } from 'astro:assets';
 
-import { projects } from "../utils/projects";
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+// Asset Imports
+import brothers from '../assets/brothers.png';
+import logoFull from '../assets/logo-full.svg';
 ---
 
 <Layout
   title="Fantom"
   description="With a shared commitment to creativity and innovation, we embark on a mission to transform your brand's digital presence into an unforgettable experience.">
-  <div class="p-page">
-    <header
-      id="fixedGrid"
-      class="fixed inset-0 p-page z-50 pointer-events-none">
-      <div class="grid grid-cols-12 h-full">
-        <div
-          class="col-span-7 grid grid-rows-[auto,1fr,auto] pointer-events-auto">
-          <Navbar />
-          <div id="context" class="my-16 relative">
-            <div id="context-fantom" class="absolute inset-0">
-              <p class="leading-loose max-w-prose mb-8">
-                With a shared commitment to creativity and innovation, we embark
-                on a mission to transform your brand's digital presence into an
-                unforgettable experience that echoes it’s uniqueness through
-                reachable and user friendly interfaces.
-              </p>
-              <Button text="Start Project" buttonType="link" href="/#contact" />
-            </div>
-            <ul id="context-projects" class="absolute inset-0 opacity-0">
-              {
-                projects.map((project) => (
-                  <ProjectContext
-                    name={project.name}
-                    description={project.description}
-                    tags={project.tags}
-                  />
-                ))
-              }
-            </ul>
-            <ul
-              id="context-contact"
-              class="absolute inset-0 opacity-0 flex flex-col gap-8 pt-16">
-              <li class="hover:translate-x-1 hover:text-brand-2 transition-all">
-                <a href="/" class="flex items-center gap-2 text-lg"
-                  ><Icon name="mail" class="size-6" />contact@fantom.studio</a
-                >
-              </li>
-              <li class="hover:translate-x-1 hover:text-brand-2 transition-all">
-                <a href="/" class="flex items-center gap-2 text-lg"
-                  ><Icon
-                    name="instagram"
-                    class="size-6"
-                  />contact@fantom.studio</a
-                >
-              </li>
-              <li class="hover:translate-x-1 hover:text-brand-2 transition-all">
-                <a href="/" class="flex items-center gap-2 text-lg"
-                  ><Icon name="x" class="size-6" />@fantom.studio</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div id="titles" class="min-h-16">
-            <h1
-              id="fantom"
-              gsap="about"
-              class="text-9xl font-bold uppercase leading-[0] gsap-wc">
-              Fantom
-            </h1>
-            <h2
-              id="projects-title"
-              class="text-9xl font-normal leading-[0] gsap-wc"
-              value="projects">
-              Projects
-            </h2>
-            <h2
-              id="contact-title"
-              class="text-9xl font-normal leading-[0] gsap-wc"
-              gsap="contact">
-              Contact
-            </h2>
-          </div>
+<main>
+    <header class="flex p-page bg-brand-1 h-screen bg-gradient-to-r from-brand-1 to-dark-2 text-light-2">
+      <div class="flex-grow mx-auto max-w-screen-2xl flex flex-col items-center justify-between gap-6 relative">
+        <div class="flex flex-col gap-10 w-full">
+          <Image src={logoFull} alt="Fantom" class="w-full" />
+          <ul class="flex items-center justify-between">
+            <li class="text-xl font-medium">Web Design</li>
+            <li class="text-xl font-medium">Web Development</li>
+            <li class="text-xl font-medium">SEO Optimization</li>
+            <li class="text-xl font-medium">E-Commerce</li>
+          </ul>
         </div>
+        <p class="text-2xl leading-loose absolute bottom-0 left-0 max-w-xl">With a shared commitment to creativity and innovation, we embark on a mission to transform your brand's digital presence into an unforgettable experience.</p>
+        <Navbar />
       </div>
     </header>
-    <main id="main" class="grid grid-cols-12">
-      <div class="col-span-5 col-start-8">
-        <section id="about" class="gsap-section pb-8" gsap="about">
-          <div class="mb-8">
-            <div class="h-96 bg-brand-1 mb-4 rounded-lg"></div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-              facilis magni quis similique placeat optio laudantium distinctio
-              consectetur molestias! Asperiores cum voluptatibus provident
-              nostrum et vero reiciendis, itaque error. Enim rem asperiores quas
-              eius ut veritatis eos commodi possimus et illo, quasi quae
-              corrupti! Explicabo dolorem eaque et corporis assumenda?
-            </p>
-          </div>
-        </section>
-        <section id="projects" class="gsap-section" gsap="projects">
-          <ul>
-            {
-              projects.map((project) => (
-                <li class="pb-8 project-card" id={project.name}>
-                  <Image
-                    src={project.imageSrc}
-                    alt={project.name}
-                    class="w-full aspect-square object-cover rounded-lg"
-                    width={900}
-                    height={800}
-                  />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-        <section id="contact" class="gsap-section pt-8" gsap="contact">
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            class="flex flex-col gap-8 mb-page">
-            <input
-              type="hidden"
-              name="access_key"
-              value="4119a2a2-86c9-4537-b0fc-35d9ba4c9a29"
-            />
-            <label for="service" class="text-xl font-medium"
-              >What kind of project can we help you with?<span
-                class="text-red-600">*</span
-              ></label
-            >
-            <div class="flex gap-4">
-              <Radio id="web-design" name="service" value="Web Design" />
-              <Radio
-                id="web-development"
-                name="service"
-                value="Web Development"
-              />
-              <Radio
-                id="design-development"
-                name="service"
-                value="Design + Development"
-              />
-            </div>
-            <label for="budget" class="text-xl font-medium"
-              >What is your budget range for this project?<span
-                class="text-red-600">*</span
-              ></label
-            >
-            <div class="flex gap-4">
-              <Radio id="<900" name="budget" value="< $900" />
-              <Radio id="900-2000" name="budget" value="$900 - $2,000" />
-              <Radio id="2000-5000" name="budget" value="$2,000 - $5,000" />
-              <Radio id="5000+" name="budget" value="$5,000+" />
-            </div>
-            <label for="found" class="text-xl font-medium"
-              >How did you hear about us?<span class="text-red-600">*</span
-              ></label
-            >
-            <div class="flex gap-4">
-              <Radio id="social" name="found" value="Social Media" />
-              <Radio id="search" name="found" value="Online Search" />
-              <Radio id="referral" name="found" value="Referral" />
-              <Radio id="other" name="found" value="Other" />
-            </div>
-            <div class="flex flex-col gap-4">
-              <label for="details" class="text-xl font-medium"
-                >Can you tell us a little more about the project?</label
-              >
-              <div class="flex gap-4 my-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name*"
-                  required
-                  class="flex-grow border-b border-brand-1 bg-transparent invalid:border-b-red-600 focus:border-b-2 focus:outline-none"
-                />
-                <input
-                  type="text"
-                  name="brand"
-                  placeholder="Brand Name*"
-                  required
-                  class="flex-grow border-b border-brand-1 bg-transparent invalid:border-b-red-600 focus:border-b-2 focus:outline-none"
-                />
-              </div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email*"
-                required
-                class="flex-grow border-b mb-4 border-brand-1 bg-transparent invalid:border-b-red-600 focus:border-b-2 focus:outline-none"
-              />
-              <div class="flex flex-col gap-2 mb-4">
-                <textarea
-                  name="message"
-                  placeholder="Message*"
-                  class="flex-grow border-b border-brand-1 bg-transparent invalid:border-b-red-600 focus:border-b-2 focus:outline-none"
-                ></textarea>
-                <label for="message" class="text-xs italic"
-                  >*Please give us some details about your project and what you
-                  need help with.</label
-                >
-              </div>
-              <Button text="Submit" buttonType="button" />
-            </div>
-          </form>
-        </section>
+    
+    <!-- About Section -->
+    <section class="px-page pt-40 pb-20">
+      <div class="mx-auto max-w-screen-2xl flex flex-col items-center gap-6 text-center">
+        <Image src={brothers} alt="Two brothers side by side with a printer effect; cropped at the shoulders." class="w-96 aspect-video object-contain" />
+        <h2 class="font-display text-6xl font-semibold uppercase">We are a couple of brothers who <br> <span class="font-body font-normal text-5xl">Love to create meaningful experiences</span></h2>
+        <p class="text-xl leading-loose max-w-prose">We believe intentional design that makes products last. We strive to create unique and unforgettable experiences that make a lasting impression on users and bring immense value to the businesses we work with, we share the importance of unique and holistic design in order to stand out from the crowd.</p>
       </div>
-    </main>
-  </div>
-</Layout>
+    </section>
 
-<script src="../scrollTimeline.js"></script>
+    <!-- Projects Section -->
+    <section class="px-page pt-40 pb-20">
+      <div class="mx-auto max-w-screen-2xl flex flex-col items-center gap-6 text-center">
+        <p class="text-xl leading-loose max-w-prose">Here goes the selected projects...</p>
+      </div>
+    </section>
+</main>
+</Layout>
