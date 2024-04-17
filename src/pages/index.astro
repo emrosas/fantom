@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Container from '../components/Container.astro';
 import Pill from '../components/Pill.astro';
+import ContactForm from '../components/ContactForm.astro';
 import { Image } from 'astro:assets';
 
 // Asset Imports
@@ -138,10 +139,11 @@ import wraps from '../assets/projects/wraps.png';
     <!-- Contact Section -->
     <section class="px-page pt-40 pb-20">
             <Container>
-                    <div class="flex flex-col gap-4 items-start">
-                        <div class="w-full h-[1px] bg-dark-1"/>
-                        <h2 class="text-base text-dark-1 uppercase">[Get in Touch]</h2>
-                    </div>
+                <div class="flex flex-col gap-4 items-start">
+                    <div class="w-full h-[1px] bg-dark-1"/>
+                    <h2 class="text-base text-dark-1 uppercase">[Get in Touch]</h2>
+                </div>
+            <!-- <ContactForm /> -->
             </Container>
     </section>
     <Footer />

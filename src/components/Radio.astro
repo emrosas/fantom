@@ -11,8 +11,8 @@ const { id, name, value } = Astro.props;
 <input type="radio" id={id} name={name} value={value} class="hidden" />
 <label
   for={id}
-  class=`flex cursor-pointer flex-nowrap shrink-0 items-center rounded-full bg-brand-1 bg-opacity-0 px-4 py-1 outline outline-brand-1 transition hover:bg-opacity-10`>
-  <span class="text-sm">{value}</span>
+  class=`flex cursor-pointer flex-nowrap shrink-0 items-center rounded-full bg-brand-1 bg-opacity-0 px-6 py-2 outline outline-brand-1 transition hover:bg-opacity-10`>
+  <span class="text-lg">{value}</span>
 </label>
 
 <style>
