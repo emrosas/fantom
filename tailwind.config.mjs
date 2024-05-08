@@ -4,16 +4,15 @@ export default {
   theme: {
     fontFamily: {
       body: ["Neue-Regrade-Variable", "sans-serif"],
-      display: ["Outfit Variable", "sans-serif"],
+      display: ["itc-avant-garde-gothic-pro", "sans-serif"],
     },
     extend: {
       colors: {
-        "dark-1": "#060623",
-        "dark-2": "#0D0E4E",
-        "brand-1": "#0013A3",
-        "brand-2": "#0B22D0",
-        "light-1": "#B5C3D9",
-        "light-2": "#EEEFF1",
+        "g-primary": "#000E7A",
+        "g-secondary": "#000529",
+        "brand": "#0013A3",
+        "light": "#FCFCFC",
+        "dark": "#060623",
       },
       spacing: {
         page: "var(--page-main)",

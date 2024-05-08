@@ -1,5 +1,6 @@
 ---
 import { SEO } from "astro-seo";
+import Navbar from "../components/Navbar.astro";
 interface Props {
   title: string;
   description: string;
@@ -15,6 +16,7 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" href="https://use.typekit.net/zmd4nhu.css">
     <meta name="generator" content={Astro.generator} />
     <SEO
       title={title}
@@ -30,7 +32,8 @@ const { title, description } = Astro.props;
       }}
     />
   </head>
-  <body class="p-0 m-0 bg-light-2 text-brand-1 font-body overscroll-none">
+  <body class="p-0 m-0 bg-light text-brand font-body overscroll-none overflow-x-clip">
+    <Navbar />
     <slot />
     <style is:global>
       @font-face {
@@ -40,12 +43,38 @@ const { title, description } = Astro.props;
         font-display: swap;
         font-style: normal;
       }
+      @font-face {
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
       :root {
         /* Spacing variables */
         --page-main: var(--page-desktop);
         --page-desktop: 3rem;
         --page-tablet: 1.25rem;
         --page-mobile: 1rem;
+      }
+
+      @media (max-width: 1024px) {
+        :root {
+          --page-main: var(--page-tablet);
+        }
+      }
+      @media (max-width: 768px) {
+        :root {
+          --page-main: var(--page-mobile);
+        }
       }
       .hide-scrollbar::-webkit-scrollbar {
         display: none;

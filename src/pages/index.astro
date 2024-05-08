@@ -1,151 +1,120 @@
 ---
-// Component Imports
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import Container from '../components/Container.astro';
-import Pill from '../components/Pill.astro';
-import ContactForm from '../components/ContactForm.astro';
-import { Image } from 'astro:assets';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
 
-// Asset Imports
-import brothers from '../assets/brothers.png';
-import logoFull from '../assets/logo-full.svg';
-
-// Project Images
-import postreria from '../assets/projects/postreria.png';
-import pasteleria from '../assets/projects/pasteleria.png';
-import herrmat from '../assets/projects/herrmat.png';
-import wraps from '../assets/projects/wraps.png';
+import gridLines from "../assets/grid-lines.svg";
+import headerProjects from "../assets/header-projects.png";
 ---
 
 <Layout
-  title="Fantom"
-  description="With a shared commitment to creativity and innovation, we embark on a mission to transform your brand's digital presence into an unforgettable experience.">
-<main>
-    <header class="flex p-page bg-brand-1 h-screen bg-gradient-to-r from-brand-1 to-dark-2 text-light-2">
-      <div class="flex-grow mx-auto max-w-screen-2xl flex flex-col items-center justify-between gap-6 relative">
-        <div class="flex flex-col gap-10 w-full">
-          <Image src={logoFull} alt="Fantom" class="w-full" />
-          <ul class="flex items-center justify-between">
-            <li class="text-xl font-medium">Web Design</li>
-            <li class="text-xl font-medium">Web Development</li>
-            <li class="text-xl font-medium">SEO Optimization</li>
-            <li class="text-xl font-medium">E-Commerce</li>
-          </ul>
-        </div>
-        <p class="text-2xl leading-loose absolute bottom-0 left-0 max-w-xl">With a shared commitment to creativity and innovation, we embark on a mission to transform your brand's digital presence into an unforgettable experience.</p>
-        <Navbar />
+  title="Fantom | Design & Development"
+  description="We develop unique websites to help  brands reach their business goals."
+>
+  <main class="overflow-x-clip" <header class="relative text-light">
+    <div id="header-content-holder" class="flex flex-col pt-52">
+      <div
+        class="px-page text-light flex flex-col gap-6 items-start relative z-20"
+      >
+        <h1 class="font-display text-7xl leading-tight max-w-[80%]">
+          We develop unique websites to help brands reach their business goals.
+        </h1>
+        <p class="text-2xl leading-loose opacity-60 max-w-[50ch]">
+          Our studio specializes in building intentionally designed websites
+          that boosts conversion rates and create more immersive experiences for
+          their users.
+        </p>
+        <Button text="Request a Proposal" href="/" buttonType="link" />
       </div>
-    </header>
-    
-    <!-- About Section -->
-    <section class="px-page pt-40 pb-20">
-            <Container>
-                <div class="flex flex-col items-center gap-6 text-center">
-                    <Image src={brothers} alt="Two brothers side by side with a printer effect; cropped at the shoulders." class="w-96 aspect-video object-contain" />
-                    <h2 class="font-display text-6xl font-semibold uppercase">We are a couple of brothers who <br> <span class="font-body font-normal text-5xl">Love to create meaningful experiences</span></h2>
-                    <p class="text-xl leading-loose max-w-prose">We believe intentional design that makes products last. We strive to create unique and unforgettable experiences that make a lasting impression on users and bring immense value to the businesses we work with, we share the importance of unique and holistic design in order to stand out from the crowd.</p>
-                </div>
-            </Container>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="px-page pt-40 pb-20 text-dark-1">
-            <Container>
-                    <div class="flex flex-col gap-4 items-start">
-                        <div class="w-full h-[1px] bg-dark-1"/>
-                        <h2 class="text-base uppercase">[Selected Projects]</h2>
-                    </div>
-                <div id="projects-grid" class="grid grid-cols-8 gap-x-8 gap-y-20">
-                    <a href="/" class="col-span-5 col-start-1 row-start-1 flex flex-col gap-4 group">
-                        <div class="w-full aspect-video relative rounded-lg group-hover:rounded-2xl overflow-clip transition-all duration-500 ease-out">
-                            <Image src={postreria} alt="La Postreria 77 website mockup" class="absolute inset-0 object-cover group-hover:scale-105 transition-all duration-500 ease-out" />
-                        </div>
-                        <div class="w-full h-[1px] bg-dark-1"/>
-                        <div class="flex gap-6 justify-between">
-                            <div class="flex flex-col gap-4">
-                                <h3 class="uppercase font-display text-2xl font-medium">La Postreria 77</h3>
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <Pill text="Web Design" />
-                                    <Pill text="Web Development" />
-                                    <Pill text="CMS Management" />
-                                </div>
-                            </div>
-                            <p class="text-xs leading-loose max-w-lg">
-      The La Postreria 77 website was built using Webflow and its CMS solution. The website is fully responsive and features a dynamic menu solution that allows the client to easily update the menu items and prices. This feature alse enables them to divide their menu into multiple branches by utilizing stylized and reusable components.
-                            </p>
-                        </div>
-                    </a>
-                    <a href="/" class="col-span-3 col-start-6 row-start-1 flex flex-col gap-4 group mb-auto">
-                        <div class="w-full aspect-video relative rounded-lg group-hover:rounded-2xl overflow-clip transition-all duration-500 ease-out">
-                            <Image src={wraps} alt="The Wrap Co. Website Mockup" class="absolute inset-0 object-cover group-hover:scale-105 transition-all duration-500 ease-out" />
-                        </div>
-                        <div class="w-full h-[1px] bg-dark-1"/>
-                        <div class="flex gap-6 justify-between">
-                            <div class="flex flex-col gap-4 flex-shrink-0">
-                                <h3 class="uppercase font-display text-2xl font-medium flex-shrink-0">The Wrap Co.</h3>
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <Pill text="Web Design" />
-                                </div>
-                            </div>
-                            <p class="text-xs leading-loose max-w-sm">
-      This is a fully responsive website featuring static and dynamic elements throughtout the site. Built with Astro for it's unmatched speed and React for it's dynamic capabilities.
-                            </p>
-                        </div>
-                    </a>
-                    <a href="/" class="col-span-3 col-start-1 flex flex-col gap-4 group mt-auto">
-                        <div class="w-full aspect-video relative rounded-lg group-hover:rounded-2xl overflow-clip transition-all duration-500 ease-out">
-                            <Image src={herrmat} alt="La Postreria 77 website mockup" class="absolute inset-0 object-cover group-hover:scale-105 transition-all duration-500 ease-out" />
-                        </div>
-                        <div class="w-full h-[1px] bg-dark-1"/>
-                        <div class="flex gap-6 justify-between">
-                            <div class="flex flex-col gap-4 flex-grow">
-                                <h3 class="uppercase font-display text-2xl font-medium flex-shrink-0">Herrmat</h3>
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <Pill text="Web Design" />
-                                    <Pill text="Web Development" />
-                                    <Pill text="E-Commerce" />
-                                </div>
-                            </div>
-                            <p class="text-xs leading-loose max-w-sm min-w-60">
-      Herrmat's site features an integrated search and filter solution that allows the user to easily find the product they are looking for. The site is fully responsive and features a dynamic catalog solution that allows the client to easily update the catalogs items and prices.
-                            </p>
-                        </div>
-                    </a>
-                    <a href="/" class="col-span-5 col-start-4 flex flex-col gap-4 group">
-                        <div class="w-full aspect-video relative rounded-lg group-hover:rounded-2xl overflow-clip transition-all duration-500 ease-out">
-                            <Image src={pasteleria} alt="La Pasteleria de La Postreria 77 Landing Page Mockup" class="absolute inset-0 object-cover group-hover:scale-105 transition-all duration-500 ease-out" />
-                        </div>
-                        <div class="w-full h-[1px] bg-dark-1"/>
-                        <div class="flex gap-6 justify-between">
-                            <div class="flex flex-col gap-4">
-                                <h3 class="uppercase font-display text-2xl font-medium">La Pasteleria de La Postreria 77</h3>
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <Pill text="Web Design" />
-                                    <Pill text="Web Development" />
-                                    <Pill text="CMS Management" />
-                                </div>
-                            </div>
-                            <p class="text-xs leading-loose max-w-lg">
-      This simple website is both elegant and informative, it aims to provide the user with a quick and easy way to find the location of the bakery and to contact them.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </Container>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="px-page pt-40 pb-20">
-            <Container>
-                <div class="flex flex-col gap-4 items-start">
-                    <div class="w-full h-[1px] bg-dark-1"/>
-                    <h2 class="text-base text-dark-1 uppercase">[Get in Touch]</h2>
-                </div>
-            <!-- <ContactForm /> -->
-            </Container>
-    </section>
-    <Footer />
-</main>
+      <div class="flex flex-col items-center">
+        <Image
+          src={headerProjects}
+          alt="Hero Image"
+          class="pointer-events-none relative z-20 w-[125%] max-w-none -translate-y-[15%]"
+        />
+      </div>
+    </div>
+    <div
+      id="header-bg"
+      class="absolute top-0 left-0 right-0 h-[95vh] bg-gradient-to-t from-g-primary to-g-secondary text-light"
+    >
+      <Image
+        src={gridLines}
+        alt="Hero Image"
+        class="pointer-events-none absolute z-0 top-0 left-0 w-full h-[200%] right-0"
+      />
+    </div>
+  </main>
+  <section class="h-screen">
+    <div class="flex flex-col gap-20 px-page">
+      <div class="grid grid-cols-2 gap-6 items-end border-b-brand border-solid pb-16 border-b-2">
+        <h2 class="text-6xl font-display col-start-1">What we do best</h2>
+        <p class="text-2xl max-w-[40ch] col-start-1 row-start-2 leading-relaxed">
+          These are some ways we make every website special and help you stand
+          out in the online space.
+        </p>
+        <span class="uppercase text-end row-span-2 text-2xl">[01. Services]</span>
+      </div>
+      <div class="grid grid-cols-4 gap-16">
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-display">Intentional Design</h3>
+          <p class="text-2xl leading-relaxed text-dark font-light">
+            We design websites that are not only visually appealing but also
+            functional and user-friendly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="h-screen"></section>
+  <section class="h-screen"></section>
 </Layout>

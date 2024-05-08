@@ -1,0 +1,65 @@
+<svg width="1440" height="1440" viewBox="0 0 1440 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.25">
+<mask id="mask0_1009_30" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="1440">
+<rect width="1440" height="1440" fill="url(#paint0_radial_1009_30)"/>
+</mask>
+<g mask="url(#mask0_1009_30)">
+<g clip-path="url(#clip0_1009_30)">
+<rect y="-0.879883" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="74.8538" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="150.587" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="226.321" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="302.055" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="377.789" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="453.522" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="529.256" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="604.99" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="680.723" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="756.457" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="832.191" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="907.924" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="983.658" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="1059.39" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="1135.13" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="1210.86" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="1286.59" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="1362.33" width="1440.94" height="1" fill="#FCFCFC"/>
+<rect y="1438.06" width="1440.94" height="1" fill="#FCFCFC"/>
+</g>
+<g clip-path="url(#clip1_1009_30)">
+<rect y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="75.7871" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="151.572" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="227.359" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="303.145" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="378.932" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="454.719" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="530.504" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="606.291" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="682.076" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="757.863" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="833.65" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="909.436" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="985.223" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="1061.01" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="1136.79" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="1212.58" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="1288.37" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="1364.15" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+<rect x="1439.94" y="-0.879883" width="1" height="1439.94" fill="#FCFCFC"/>
+</g>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1009_30" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720 720) rotate(-180) scale(720)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip0_1009_30">
+<rect width="1440.94" height="1440.94" fill="white" transform="translate(0 -1.87988)"/>
+</clipPath>
+<clipPath id="clip1_1009_30">
+<rect width="1440.94" height="1440.94" fill="white" transform="translate(0 -1.87988)"/>
+</clipPath>
+</defs>
+</svg>
