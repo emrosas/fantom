@@ -1,10 +1,16 @@
 ---
+// Component imports
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import ServiceCard from "../components/ServiceCard.astro";
 
+// Asset imports
 import gridLines from "../assets/grid-lines.svg";
 import headerProjects from "../assets/header-projects.png";
+// Project images
+import lp77 from "../assets/projects/postreria.png";
 ---
 
 <Layout
@@ -45,76 +51,85 @@ import headerProjects from "../assets/header-projects.png";
       />
     </div>
   </main>
-  <section class="h-screen">
+  <section class="pb-32">
+    <!--Section header conatining title and description -->
     <div class="flex flex-col gap-20 px-page">
-      <div class="grid grid-cols-2 gap-6 items-end border-b-brand border-solid pb-16 border-b-2">
-        <h2 class="text-6xl font-display col-start-1">What we do best</h2>
-        <p class="text-2xl max-w-[40ch] col-start-1 row-start-2 leading-relaxed">
-          These are some ways we make every website special and help you stand
-          out in the online space.
-        </p>
-        <span class="uppercase text-end row-span-2 text-2xl">[01. Services]</span>
-      </div>
+      <SectionHeader
+        title="What we do best"
+        description="These are some ways we make every website special and help you stand out in the online space."
+        sectionNumber={1}
+        sectionName="Services"
+      />
+      <!--Grid for service cards -->
       <div class="grid grid-cols-4 gap-16">
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-4xl font-display">Intentional Design</h3>
-          <p class="text-2xl leading-relaxed text-dark font-light">
-            We design websites that are not only visually appealing but also
-            functional and user-friendly.
-          </p>
-        </div>
+        <ServiceCard
+          title="Intentional Design"
+          description="We design websites that are not only visually appealing but also functional and user-friendly."
+          icon="int-design"
+        />
+        <ServiceCard
+          title="Advanced Interactions"
+          description="From basic to complex animations – fully leverage visual storytelling in your website."
+          icon="adv-interactions"
+        />
+        <ServiceCard
+          title="Integrations"
+          description="Connect your website to tools you love like Notion, Airtable, Google Sheets and more."
+          icon="integrations"
+        />
+        <ServiceCard
+          title="Content Creation"
+          description="We create hight-quality content for your blog and other pages to make your site easily findable."
+          icon="content-creation"
+        />
+        <ServiceCard
+          title="Content Management"
+          description="Create, architect, and manage content. Implement complex filter systems with a personalized CMS."
+          icon="content-management"
+        />
+        <ServiceCard
+          title="Project Cleanup"
+          description="We make sure to deliver a clean project to make future endeavors more easily approachable."
+          icon="project-cleanup"
+        />
+        <ServiceCard
+          title="SEO optimization"
+          description="We audit and optimize your website to make it rank faster and higher on search engines."
+          icon="seo"
+        />
+        <ServiceCard
+          title="Analytics"
+          description="We track your site’s performance using Google Analytics and other tools."
+          icon="analytics"
+        />
       </div>
     </div>
   </section>
-  <section class="h-screen"></section>
-  <section class="h-screen"></section>
+  <section class="py-32">
+    <div class="flex flex-col gap-20 px-page">
+      <SectionHeader
+        title="Our work defines us"
+        description="We focus on making every project tell it’s unique story and help the business thrive in the online space."
+        sectionNumber={2}
+        sectionName="Projects"
+      />
+      <ul class="grid grid-cols-3 gap-8">
+        <li class="flex flex-col gap-4">
+          <div class="rounded-2xl overflow-hidden aspect-square">
+            <Image src={lp77} alt="La Postreria 77" class="size-full object-cover" />
+          </div>
+          <div class="flex justify-between gap-8">
+            <div>
+              <h3 class="text-2xl font-display">La Postreria 77</h3>
+              <span class="uppercase opacity-60 text-xs">Marketing site</span>
+            </div>
+            <p class="text-xl">
+              Design & Development
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section></section>
 </Layout>
