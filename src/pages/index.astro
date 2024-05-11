@@ -5,12 +5,17 @@ import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 // Asset imports
 import gridLines from "../assets/grid-lines.svg";
 import headerProjects from "../assets/header-projects.png";
 // Project images
 import lp77 from "../assets/projects/postreria.png";
+import pgco from "../assets/projects/pgco.png";
+import pasteleria from "../assets/projects/pasteleria.png";
+import herrmat from "../assets/projects/herrmat.png";
+import wraps from "../assets/projects/wraps.png";
 ---
 
 <Layout
@@ -113,21 +118,44 @@ import lp77 from "../assets/projects/postreria.png";
         sectionNumber={2}
         sectionName="Projects"
       />
-      <ul class="grid grid-cols-3 gap-8">
-        <li class="flex flex-col gap-4">
-          <div class="rounded-2xl overflow-hidden aspect-square">
-            <Image src={lp77} alt="La Postreria 77" class="size-full object-cover" />
-          </div>
-          <div class="flex justify-between gap-8">
-            <div>
-              <h3 class="text-2xl font-display">La Postreria 77</h3>
-              <span class="uppercase opacity-60 text-xs">Marketing site</span>
-            </div>
-            <p class="text-xl">
-              Design & Development
-            </p>
-          </div>
-        </li>
+      <!--Grid for project cards -->
+      <ul class="grid grid-cols-3 gap-8 group/grid">
+        <ProjectCard
+          title="La Postreria 77"
+          siteType="Marketing site"
+          image={lp77}
+          service="Design & Development"
+        />
+        <ProjectCard
+          title="Party Game Companion"
+          siteType="Web app"
+          image={pgco}
+          service="Design & Development"
+        />
+        <ProjectCard
+          title="La Pasteleria de La Postreria 77"
+          siteType="Marketing site"
+          image={pasteleria}
+          service="Design & Development"
+        />
+        <ProjectCard
+          title="Herrmat"
+          siteType="E-commerce site"
+          image={herrmat}
+          service="Design & Development"
+        />
+        <ProjectCard
+          title="The Wrap Co."
+          siteType="Marketing site"
+          image={wraps}
+          service="Design"
+        />
+        <ProjectCard
+          title="Otra Marca"
+          siteType="Web app"
+          image={lp77}
+          service="Design & Development"
+        />
       </ul>
     </div>
   </section>
