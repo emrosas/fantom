@@ -1,11 +1,17 @@
 ---
+// Component imports
 import { SEO } from "astro-seo";
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+// Font imports
+import '@fontsource-variable/outfit';
+
+// Props type
 interface Props {
   title: string;
   description: string;
 }
-import '@fontsource-variable/outfit';
 
 const { title, description } = Astro.props;
 ---
@@ -35,6 +41,7 @@ const { title, description } = Astro.props;
   <body class="p-0 m-0 bg-light text-brand font-body overscroll-none overflow-x-clip">
     <Navbar />
     <slot />
+    <Footer />
     <style is:global>
       @font-face {
         font-family: 'Neue-Regrade-Variable';

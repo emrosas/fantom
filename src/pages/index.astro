@@ -2,8 +2,8 @@
 // Component imports
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Button from "../components/Button.astro";
-import SectionHeader from "../components/SectionHeader.astro";
+import Button from "../components/ui/Button.astro";
+import Pill from "../components/ui/Pill.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
@@ -57,24 +57,30 @@ import wraps from "../assets/projects/wraps.png";
     </div>
   </main>
   <section class="pb-32">
-    <!--Section header conatining title and description -->
     <div class="flex flex-col gap-20 px-page">
-      <SectionHeader
-        title="What we do best"
-        description="These are some ways we make every website special and help you stand out in the online space."
-        sectionNumber={1}
-        sectionName="Services"
-      />
+      <!--Section header conatining title and description -->
+      <div class="flex flex-col items-start gap-3">
+        <Pill>Services</Pill>
+        <h2 class="text-5xl font-display">
+          Everything you need to <span class="text-brand-1-light"
+            >thrive online</span
+          >
+        </h2>
+        <p class="font-medium text-xl opacity-60 leading-relaxed">
+          These are some ways we make every website special and help you stand
+          out in the online space.
+        </p>
+      </div>
       <!--Grid for service cards -->
-      <div class="grid grid-cols-4 gap-16">
+      <div class="grid grid-cols-3 gap-16">
         <ServiceCard
           title="Intentional Design"
-          description="We design websites that are not only visually appealing but also functional and user-friendly."
+          description="We make your website with your brand’s goals in mind at every turn to help you achieve them faster."
           icon="int-design"
         />
         <ServiceCard
           title="Advanced Interactions"
-          description="From basic to complex animations – fully leverage visual storytelling in your website."
+          description="From basic to complex animations we help set your site apart by fully leveraging visual storytelling and captivating your users with a high end experience."
           icon="adv-interactions"
         />
         <ServiceCard
@@ -84,27 +90,17 @@ import wraps from "../assets/projects/wraps.png";
         />
         <ServiceCard
           title="Content Creation"
-          description="We create hight-quality content for your blog and other pages to make your site easily findable."
+          description="We create hight-quality content for your blog and manage it through a personalized CMS to make your site easily findable."
           icon="content-creation"
         />
         <ServiceCard
-          title="Content Management"
-          description="Create, architect, and manage content. Implement complex filter systems with a personalized CMS."
-          icon="content-management"
-        />
-        <ServiceCard
-          title="Project Cleanup"
-          description="We make sure to deliver a clean project to make future endeavors more easily approachable."
-          icon="project-cleanup"
-        />
-        <ServiceCard
           title="SEO optimization"
-          description="We audit and optimize your website to make it rank faster and higher on search engines."
+          description="We audit, optimize and cleanup your website to make it rank faster and higher on search engines and make future endeavors more easily approachable."
           icon="seo"
         />
         <ServiceCard
           title="Analytics"
-          description="We track your site’s performance using Google Analytics and other tools."
+          description="We track your site’s performance using Google Analytics and other tools to help you understand how your users are interacting with your brand."
           icon="analytics"
         />
       </div>
@@ -112,12 +108,18 @@ import wraps from "../assets/projects/wraps.png";
   </section>
   <section class="py-32">
     <div class="flex flex-col gap-20 px-page">
-      <SectionHeader
-        title="Our work defines us"
-        description="We focus on making every project tell it’s unique story and help the business thrive in the online space."
-        sectionNumber={2}
-        sectionName="Projects"
-      />
+      <!--Section header conatining title and description -->
+      <div class="flex flex-col items-center text-center gap-3">
+        <Pill>Projects</Pill>
+        <h2 class="text-5xl font-display">
+          We believe our work <span class="text-brand-1-light"
+            >defines us</span
+          >
+        </h2>
+        <p class="font-medium text-xl opacity-60 max-w-[50ch] leading-relaxed">
+        We focus on making every project tell it’s unique story and help the business thrive in the online space.
+        </p>
+      </div>
       <!--Grid for project cards -->
       <ul class="grid grid-cols-3 gap-8 group/grid">
         <ProjectCard

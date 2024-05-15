@@ -10,7 +10,9 @@ export default {
       colors: {
         "g-primary": "#000E7A",
         "g-secondary": "#000529",
-        "brand": "#0013A3",
+        "brand-1": "#0013A3",
+        "brand-1-light": "#475DFF",
+        "brand-2": "#4B1AFF",
         "light": "#FCFCFC",
         "dark": "#060623",
       },
