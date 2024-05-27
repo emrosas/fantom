@@ -11,13 +11,13 @@ import ProjectCard from "../components/ProjectCard.astro";
 // Asset imports
 import gridLines from "../assets/grid-lines.svg";
 import headerProjects from "../assets/header-projects.png";
+import headerTablet from "../assets/header-tablet.png";
 // Project images
 import lp77 from "../assets/projects/postreria.png";
 import pgco from "../assets/projects/pgco.png";
 import pasteleria from "../assets/projects/pasteleria.png";
 import herrmat from "../assets/projects/herrmat.png";
 import wraps from "../assets/projects/wraps.png";
-import type { Icon } from "astro-icon/components";
 ---
 
 <Layout
@@ -25,13 +25,21 @@ import type { Icon } from "astro-icon/components";
   description="We develop unique websites to help  brands reach their business goals."
 >
   <main>
+  <header class="min-h-screen bg-gradient-to-b from-g-secondary to-g-primary flex flex-col gap-8 items-center justify-between pt-32 overflow-clip">
+    <div class="flex flex-col items-center gap-6 max-w-3xl justify-center text-center flex-grow">
+      <h1 class="font-display text-5xl">Unique websites that <br><span class="text-alt">increase conversions</span> for brands.</h1>
+      <p class="font-medium text-xl leading-loose opacity-60 mb-4">We specialize in building intentionally designed websites create more immersive experiences for users.</p>
+    <Button text="Get in Touch" buttonType="button">
+    </div>
+  <Image src={headerTablet} alt="Tablet mockup that shows good user experience."  class="w-2/3"/>
+  </header>
     <section class="pb-32 pt-80">
       <div class="flex flex-col gap-28 px-page">
         <!--Section header conatining title and description -->
         <div class="flex flex-col items-start gap-3">
           <Pill>Services</Pill>
           <h2 class="text-5xl font-display">
-            Everything you need to <span class="text-brand-1-light"
+            Everything you need to <span class="text-alt"
               >thrive online</span
             >
           </h2>
@@ -93,7 +101,7 @@ import type { Icon } from "astro-icon/components";
         <div class="flex flex-col items-center text-center gap-3">
           <Pill>Projects</Pill>
           <h2 class="text-5xl font-display">
-            We believe our work <span class="text-brand-1-light"
+            We believe our work <span class="text-alt"
               >defines us</span
             >
           </h2>
