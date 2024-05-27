@@ -2,6 +2,7 @@
 // Component imports
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import Button from "../components/ui/Button.astro";
 import Pill from "../components/ui/Pill.astro";
 import ServiceCard from "../components/ServiceCard.astro";
@@ -16,150 +17,133 @@ import pgco from "../assets/projects/pgco.png";
 import pasteleria from "../assets/projects/pasteleria.png";
 import herrmat from "../assets/projects/herrmat.png";
 import wraps from "../assets/projects/wraps.png";
+import type { Icon } from "astro-icon/components";
 ---
 
 <Layout
   title="Fantom | Design & Development"
   description="We develop unique websites to help  brands reach their business goals."
 >
-  <main class="overflow-x-clip" <header class="relative text-light">
-    <div id="header-content-holder" class="flex flex-col pt-52">
-      <div
-        class="px-page text-light flex flex-col gap-6 items-start relative z-20"
-      >
-        <h1 class="font-display text-7xl leading-tight max-w-[80%]">
-          We develop unique websites to help brands reach their business goals.
-        </h1>
-        <p class="text-2xl leading-loose opacity-60 max-w-[50ch]">
-          Our studio specializes in building intentionally designed websites
-          that boosts conversion rates and create more immersive experiences for
-          their users.
-        </p>
-        <Button text="Request a Proposal" href="/" buttonType="link" />
+  <main>
+    <section class="pb-32 pt-80">
+      <div class="flex flex-col gap-28 px-page">
+        <!--Section header conatining title and description -->
+        <div class="flex flex-col items-start gap-3">
+          <Pill>Services</Pill>
+          <h2 class="text-5xl font-display">
+            Everything you need to <span class="text-brand-1-light"
+              >thrive online</span
+            >
+          </h2>
+          <p class="font-medium text-xl opacity-60 leading-relaxed">
+            These are some ways we make every website special and help you stand
+            out in the online space.
+          </p>
+        </div>
+        <!--Grid for service cards -->
+        <div class="grid grid-cols-3 gap-24">
+          <ServiceCard
+            title="Intentional Design"
+            description="We make your website with your brand’s goals in mind at every turn to help you achieve them faster."
+            icon="int-design"
+          />
+          <ServiceCard
+            title="Advanced Interactions"
+            description="From basic to complex animations we help set your site apart by fully leveraging visual storytelling and captivating your users with a high end experience."
+            icon="adv-interactions"
+          />
+          <ServiceCard
+            title="Integrations"
+            description="Connect your website to tools you love like Notion, Airtable, Google Sheets and more."
+            icon="integrations"
+          />
+          <ServiceCard
+            title="Content Creation"
+            description="We create hight-quality content for your blog and manage it through a personalized CMS to make your site easily findable."
+            icon="content-creation"
+          />
+          <ServiceCard
+            title="SEO optimization"
+            description="We audit, optimize and cleanup your website to make it rank faster and higher on search engines and make future endeavors more easily approachable."
+            icon="seo"
+          />
+          <ServiceCard
+            title="Analytics"
+            description="We track your site’s performance using Google Analytics and other tools to help you understand how your users are interacting with your brand."
+            icon="analytics"
+          />
+        </div>
+        <div class="flex flex-col gap-2 items-center mt-16">
+        <h3 class="font-display text-xl font-medium">We use powerful technologies</h3>
+        <p class="opacity-60 font-medium">That will make your website fast, reliable and stand the test of time.</p>
+        <div class="flex gap-8">
+          <Icon name="tech/webflow" class="size-12"/>
+          <Icon name="tech/astro" class="size-12"/>
+          <Icon name="tech/react" class="size-12"/>
+          <Icon name="tech/tailwind" class="size-12"/>
+          <Icon name="tech/vercel" class="size-12"/>
+          <Icon name="tech/supabase" class="size-12"/>
+        </div>
+        </div>
       </div>
-      <div class="flex flex-col items-center">
-        <Image
-          src={headerProjects}
-          alt="Hero Image"
-          class="pointer-events-none relative z-20 w-[125%] max-w-none -translate-y-[15%]"
-        />
+    </section>
+    <section class="py-32">
+      <div class="flex flex-col gap-20 px-page">
+        <!--Section header conatining title and description -->
+        <div class="flex flex-col items-center text-center gap-3">
+          <Pill>Projects</Pill>
+          <h2 class="text-5xl font-display">
+            We believe our work <span class="text-brand-1-light"
+              >defines us</span
+            >
+          </h2>
+          <p
+            class="font-medium text-xl opacity-60 max-w-[50ch] leading-relaxed"
+          >
+            We focus on making every project tell it’s unique story and help the
+            business thrive in the online space.
+          </p>
+        </div>
+        <!--Grid for project cards -->
+        <ul class="grid grid-cols-3 gap-8 group/grid">
+          <ProjectCard
+            title="La Postreria 77"
+            siteType="Marketing site"
+            image={lp77}
+            service="Design & Development"
+          />
+          <ProjectCard
+            title="Party Game Companion"
+            siteType="Web app"
+            image={pgco}
+            service="Design & Development"
+          />
+          <ProjectCard
+            title="La Pasteleria de La Postreria 77"
+            siteType="Marketing site"
+            image={pasteleria}
+            service="Design & Development"
+          />
+          <ProjectCard
+            title="Herrmat"
+            siteType="E-commerce site"
+            image={herrmat}
+            service="Design & Development"
+          />
+          <ProjectCard
+            title="The Wrap Co."
+            siteType="Marketing site"
+            image={wraps}
+            service="Design"
+          />
+          <ProjectCard
+            title="Otra Marca"
+            siteType="Web app"
+            image={lp77}
+            service="Design & Development"
+          />
+        </ul>
       </div>
-    </div>
-    <div
-      id="header-bg"
-      class="absolute top-0 left-0 right-0 h-[95vh] bg-gradient-to-t from-g-primary to-g-secondary text-light"
-    >
-      <Image
-        src={gridLines}
-        alt="Hero Image"
-        class="pointer-events-none absolute z-0 top-0 left-0 w-full h-[200%] right-0"
-      />
-    </div>
+    </section>
   </main>
-  <section class="pb-32">
-    <div class="flex flex-col gap-20 px-page">
-      <!--Section header conatining title and description -->
-      <div class="flex flex-col items-start gap-3">
-        <Pill>Services</Pill>
-        <h2 class="text-5xl font-display">
-          Everything you need to <span class="text-brand-1-light"
-            >thrive online</span
-          >
-        </h2>
-        <p class="font-medium text-xl opacity-60 leading-relaxed">
-          These are some ways we make every website special and help you stand
-          out in the online space.
-        </p>
-      </div>
-      <!--Grid for service cards -->
-      <div class="grid grid-cols-3 gap-16">
-        <ServiceCard
-          title="Intentional Design"
-          description="We make your website with your brand’s goals in mind at every turn to help you achieve them faster."
-          icon="int-design"
-        />
-        <ServiceCard
-          title="Advanced Interactions"
-          description="From basic to complex animations we help set your site apart by fully leveraging visual storytelling and captivating your users with a high end experience."
-          icon="adv-interactions"
-        />
-        <ServiceCard
-          title="Integrations"
-          description="Connect your website to tools you love like Notion, Airtable, Google Sheets and more."
-          icon="integrations"
-        />
-        <ServiceCard
-          title="Content Creation"
-          description="We create hight-quality content for your blog and manage it through a personalized CMS to make your site easily findable."
-          icon="content-creation"
-        />
-        <ServiceCard
-          title="SEO optimization"
-          description="We audit, optimize and cleanup your website to make it rank faster and higher on search engines and make future endeavors more easily approachable."
-          icon="seo"
-        />
-        <ServiceCard
-          title="Analytics"
-          description="We track your site’s performance using Google Analytics and other tools to help you understand how your users are interacting with your brand."
-          icon="analytics"
-        />
-      </div>
-    </div>
-  </section>
-  <section class="py-32">
-    <div class="flex flex-col gap-20 px-page">
-      <!--Section header conatining title and description -->
-      <div class="flex flex-col items-center text-center gap-3">
-        <Pill>Projects</Pill>
-        <h2 class="text-5xl font-display">
-          We believe our work <span class="text-brand-1-light"
-            >defines us</span
-          >
-        </h2>
-        <p class="font-medium text-xl opacity-60 max-w-[50ch] leading-relaxed">
-        We focus on making every project tell it’s unique story and help the business thrive in the online space.
-        </p>
-      </div>
-      <!--Grid for project cards -->
-      <ul class="grid grid-cols-3 gap-8 group/grid">
-        <ProjectCard
-          title="La Postreria 77"
-          siteType="Marketing site"
-          image={lp77}
-          service="Design & Development"
-        />
-        <ProjectCard
-          title="Party Game Companion"
-          siteType="Web app"
-          image={pgco}
-          service="Design & Development"
-        />
-        <ProjectCard
-          title="La Pasteleria de La Postreria 77"
-          siteType="Marketing site"
-          image={pasteleria}
-          service="Design & Development"
-        />
-        <ProjectCard
-          title="Herrmat"
-          siteType="E-commerce site"
-          image={herrmat}
-          service="Design & Development"
-        />
-        <ProjectCard
-          title="The Wrap Co."
-          siteType="Marketing site"
-          image={wraps}
-          service="Design"
-        />
-        <ProjectCard
-          title="Otra Marca"
-          siteType="Web app"
-          image={lp77}
-          service="Design & Development"
-        />
-      </ul>
-    </div>
-  </section>
-  <section></section>
 </Layout>
