@@ -4,21 +4,32 @@ import Button from "./ui/Button.astro";
 ---
 
 <nav id="nav" class="fixed top-0 left-0 right-0 text-light z-40">
-  <div class="px-page py-12 flex items-center justify-between">
-    <a href="/"> 
+  <div class="px-page py-12 flex items-center justify-between gap-16">
+    <a
+      href="/"
+      class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
+    >
       <Icon name="logo" class="w-32 h-6" />
     </a>
-    <menu class="flex items-center gap-8">
-      <li>
-        <a href="/#services" class="px-4 py-2 text-base">Services</a>
-      </li>
-      <li>
-        <a href="/#projects" class="px-4 py-2 text-base">Projects</a>
-      </li>
-      <li>
-        <a href="/" class="px-4 py-2 text-base">Contact</a>
-      </li>
-    </menu>
-    <Button href="/" buttonType="link" text="Request a Proposal" />
+    <div class="flex items-center justify-between flex-grow">
+      <menu class="flex items-center gap-12">
+        <li
+          class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
+        >
+          <a href="/#services" class="py-2 text-base">Services</a>
+        </li>
+        <li
+          class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
+        >
+          <a href="/#projects" class="py-2 text-base">Projects</a>
+        </li>
+        <li
+          class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
+        >
+          <a href="/" class="py-2 text-base">Contact</a>
+        </li>
+      </menu>
+      <Button href="/" buttonType="link" text="Request a Proposal" />
+    </div>
   </div>
 </nav>

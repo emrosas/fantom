@@ -15,6 +15,8 @@ export default {
         "brand-2": "#4B1AFF",
         "light": "#FCFCFC",
         "dark": "#060623",
+        "dark-2": "#030311",
+        "alt": "#C3B2FF",
       },
       spacing: {
         page: "var(--page-main)",
