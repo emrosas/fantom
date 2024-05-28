@@ -1,14 +1,28 @@
 ---
-interface Props {
+import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
+
+const pill = cva(
+  "px-4 pb-1 pt-[6px] bg-alt-2 text-alt-2 rounded-full border border-alt-2 text-xs font-semibold leading-none uppercase mb-4",
+  {
+    variants: {
+      intent: {
+        primary: ["bg-opacity-5 border-opacity-15"],
+        secondary: ["bg-opacity-15 border-opacity-25"],
+      },
+    },
+  },
+);
+
+export interface Props
+  extends HTMLAttributes<"button">,
+    VariantProps<typeof pill> {
   children: string;
-  filled?: boolean;
 }
 
-const { filled = false } = Astro.props; 
+const { intent = "primary" } = Astro.props;
 ---
 
-<div
-  class="px-4 pb-1 pt-[6px] bg-alt-2 bg-opacity-10 text-alt-2 rounded-full border border-alt-2 border-opacity-15 text-xs font-semibold leading-none uppercase mb-4"
->
+<div class={pill({ intent })}>
   <slot />
 </div>

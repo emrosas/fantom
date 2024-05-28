@@ -25,13 +25,15 @@ import wraps from "../assets/projects/wraps.png";
   description="We develop unique websites to help  brands reach their business goals."
 >
   <main>
-  <header class="min-h-screen bg-gradient-to-b from-g-secondary to-g-primary flex flex-col gap-8 items-center justify-between pt-32 overflow-clip">
-    <div class="flex flex-col items-center gap-6 max-w-3xl justify-center text-center flex-grow">
-      <h1 class="font-display text-5xl">Unique websites that <br><span class="text-alt">increase conversions</span> for brands.</h1>
+  <header class="relative min-h-screen bg-gradient-to-b from-g-secondary to-g-primary flex flex-col gap-8 items-center justify-between pt-32 overflow-clip">
+    <div class="relative z-20 flex flex-col items-center gap-2 max-w-3xl justify-center text-center flex-grow">
+      <h1 class="font-display text-5xl leading-tight">Unique websites that <br><span class="text-alt">increase conversions</span> for brands.</h1>
       <p class="font-medium text-xl leading-loose opacity-60 mb-4">We specialize in building intentionally designed websites create more immersive experiences for users.</p>
-    <Button text="Get in Touch" buttonType="button">
+    <Button>Request a Proposal</Button>
+    <Button intent={"secondary"}>Request a Proposal</Button>
     </div>
-  <Image src={headerTablet} alt="Tablet mockup that shows good user experience."  class="w-2/3"/>
+  <Image src={headerTablet} alt="Tablet mockup that shows good user experience."  class="relative z-20 w-4/5"/>
+  <Image src={gridLines} alt="Decorative grid lines" class="absolute z-10 top-0 left-0 w-full" />
   </header>
     <section class="pb-32 pt-80">
       <div class="flex flex-col gap-28 px-page">
