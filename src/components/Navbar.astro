@@ -3,8 +3,12 @@ import { Icon } from "astro-icon/components";
 import Button from "./ui/Button.astro";
 ---
 
+<script src="../utils/navAnimation.js"></script>
+
 <nav id="nav" class="fixed top-0 left-0 right-0 text-light z-40">
-  <div class="px-page py-12 flex items-center justify-between gap-16">
+  <div
+    class="px-page py-8 flex items-center justify-between gap-16 relative z-20"
+  >
     <a
       href="/"
       class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
@@ -16,20 +20,25 @@ import Button from "./ui/Button.astro";
         <li
           class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
         >
-          <a href="/#services" class="py-2 text-base">Services</a>
+          <a href="/#services" class="py-2">Services</a>
         </li>
         <li
           class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
         >
-          <a href="/#projects" class="py-2 text-base">Projects</a>
+          <a href="/#projects" class="py-2">Projects</a>
         </li>
         <li
           class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
         >
-          <a href="/" class="py-2 text-base">Contact</a>
+          <a href="/" class="py-2">Contact</a>
         </li>
       </menu>
       <Button icon="proposal">Request a Proposal</Button>
     </div>
+  </div>
+  <div
+    id="navBg"
+    class="absolute bg-dark-2 inset-0 z-10"
+  >
   </div>
 </nav>

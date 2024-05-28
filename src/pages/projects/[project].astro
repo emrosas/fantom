@@ -1,10 +1,12 @@
 ---
+import Layout from '../../layouts/Layout.astro';
+import projects from '../../utils/projects';
+
 export function getStaticPaths() {
-  return [
-    {params: {project: 'postreria'}},
-    {params: {project: 'pgco'}},
-    {params: {project: 'victoria'}},
-  ];
+  return {
+    paths: projects.map((project) => ({ params: { project } })),
+    fallback: false,
+  };
 }
 
 const { project } = Astro.params;
