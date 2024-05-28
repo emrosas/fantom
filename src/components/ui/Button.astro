@@ -1,39 +1,55 @@
 ---
+import { Icon } from "astro-icon/components";
 import type { HTMLAttributes } from "astro/types";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const button = cva("px-6 py-4 leading-none rounded-lg", {
-  variants: {
-    intent: {
-      primary: [
-        "bg-gradient-to-r",
-        "from-g-tertiary",
-        "to-g-quaternary",
-        "text-white",
-      ],
-      secondary: [
-        "text-white",
-      ],
-    },
-    size: {
-      small: ["text-sm", "py-1", "px-2"],
-      md: ["text-base", "py-2", "px-4"],
+const button = cva(
+  "px-6 py-4 leading-none rounded-lg flex gap-2 items-center transition duration-300 ease-out hover:-translate-y-1",
+  {
+    variants: {
+      intent: {
+        primary: [
+          "bg-gradient-to-r",
+          "from-g-tertiary",
+          "to-g-quaternary",
+          "text-white",
+          "shadow-sm",
+          "shadow-alt/10",
+          "hover:shadow-alt/50",
+          "hover:shadow-md"
+        ],
+        secondary: [
+          "bg-light",
+          "bg-opacity-15",
+          "border",
+          "border-light",
+          "border-opacity-50",
+          "backdrop-blur-sm",
+          "shadow-md",
+          "shadow-light/25",
+          "hover:shadow-light/35",
+          "hover:shadow-lg",
+          "hover:bg-opacity-25",
+        ],
+      },
     },
   },
-});
+);
 
 export interface Props
   extends HTMLAttributes<"button">,
-    VariantProps<typeof button> {}
+    VariantProps<typeof button> {
+  icon?: string;
+}
 
 /**
  * For Astro components, we recommend setting your defaultVariants within
  * Astro.props (which are `undefined` by default)
  */
-const { intent = "primary", size = "md" } = Astro.props;
+const { intent = "primary", icon } = Astro.props;
 ---
 
-<button class={button({ intent, size })}>
+<button class={button({ intent })}>
+  {icon && <Icon name={icon} class="size-5 text-current" />}
   <slot />
 </button>
-
