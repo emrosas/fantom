@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 const navTl = gsap.timeline({
   scrollTrigger: {
     trigger: "header",
-    start: "5% top",
-    end: "5% top",
+    start: "10% top",
+    end: "10% top",
     scrub: 1,
   },
 });

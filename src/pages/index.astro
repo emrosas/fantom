@@ -24,29 +24,37 @@ import wraps from "../assets/projects/wraps.png";
   title="Fantom | Design & Development"
   description="We develop unique websites to help  brands reach their business goals."
 >
-<script src="../utils/homeAnimations.js"></script>
+  <script src="../utils/homeAnimations.js"></script>
   <main>
     <header
       class="relative min-h-screen bg-gradient-to-b from-g-secondary to-g-primary flex flex-col gap-8 items-center justify-between pt-32 overflow-clip"
     >
       <div
         class="relative z-20 flex flex-col items-center gap-2 max-w-3xl justify-center text-center flex-grow"
+        id="header-comp"
       >
         <h1 class="font-display text-5xl leading-tight">
           Unique websites that <br /><span class="text-alt"
             >increase conversions</span
           > for brands.
         </h1>
-        <p class="font-medium text-xl leading-relaxed text-balance opacity-60 mb-4">
+        <p
+          class="font-medium text-xl leading-relaxed text-balance opacity-60 mb-4"
+        >
           We specialize in building intentionally designed websites that create
           more immersive experiences for your users.
         </p>
-        <Button intent={"secondary"} icon="proposal">Request a Proposal</Button>
+        <div>
+          <Button intent={"secondary"} icon="proposal"
+            >Request a Proposal</Button
+          >
+        </div>
       </div>
       <Image
         src={headerTablet}
         alt="Tablet mockup that shows good user experience."
         class="relative z-20 w-4/5"
+        id="header-tablet"
       />
       <Image
         src={gridLines}
@@ -57,7 +65,7 @@ import wraps from "../assets/projects/wraps.png";
     <section class="pb-32 pt-80">
       <div class="flex flex-col gap-28 px-page">
         <!--Section header conatining title and description -->
-        <div class="flex flex-col items-start gap-3">
+        <div class="section-header flex flex-col items-start gap-3">
           <Pill>Services</Pill>
           <h2 class="text-5xl font-display">
             Everything you need to <span class="text-alt">thrive online</span>
@@ -68,7 +76,7 @@ import wraps from "../assets/projects/wraps.png";
           </p>
         </div>
         <!--Grid for service cards -->
-        <div class="grid grid-cols-3 gap-24">
+        <div id="service-cards" class="grid grid-cols-3 gap-24">
           <ServiceCard
             title="Intentional Design"
             description="We make your website with your brand’s goals in mind at every turn to help you achieve them faster."
@@ -122,7 +130,7 @@ import wraps from "../assets/projects/wraps.png";
     <section class="pt-32 pb-60">
       <div class="flex flex-col gap-20 px-page">
         <!--Section header conatining title and description -->
-        <div class="flex flex-col items-center text-center gap-3">
+        <div class="section-header flex flex-col items-center text-center gap-3">
           <Pill>Projects</Pill>
           <h2 class="text-5xl font-display">
             We believe our work <span class="text-alt">defines us</span>
