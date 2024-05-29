@@ -1,13 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+import { type Service } from "../utils/services";
 
 interface Props {
-  title: string;
-  description: string;
-  icon: string;
+  service: Service;
 }
 
-const { title, description, icon } = Astro.props;
+const { service } = Astro.props;
+const { icon, title, description } = service;
 ---
 
 <div>

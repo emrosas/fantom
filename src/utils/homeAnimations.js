@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 40%",
       end: "top 40%",
       toggleActions: "restart none reverse none",
-      markers: true,
     },
   });
   
@@ -72,6 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out",
     stagger: 0.05,
   }, "<0.1");
+  
+  servicesTl.from("#tech", {
+    opacity: 0,
+    y: 20,
+    ease: "power2.out",
+  }, "<0.3");
 
   // Services section animations
   const projectsTl = gsap.timeline({
@@ -80,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 40%",
       end: "top 40%",
       toggleActions: "restart none reverse none",
-      markers: true,
     },
   });
   

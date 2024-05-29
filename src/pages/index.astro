@@ -12,12 +12,9 @@ import ProjectCard from "../components/ProjectCard.astro";
 import gridLines from "../assets/grid-lines.svg";
 import headerTablet from "../assets/header-tablet.png";
 
-// Project images
-import lp77 from "../assets/projects/postreria.png";
-import pgco from "../assets/projects/pgco.png";
-import pasteleria from "../assets/projects/pasteleria.png";
-import herrmat from "../assets/projects/herrmat.png";
-import wraps from "../assets/projects/wraps.png";
+// Data imports
+import { services } from "../utils/services";
+import { projects } from "../utils/projects";
 ---
 
 <Layout
@@ -65,7 +62,7 @@ import wraps from "../assets/projects/wraps.png";
     <section class="pb-32 pt-80">
       <div class="flex flex-col gap-28 px-page">
         <!--Section header conatining title and description -->
-        <div id="services" class="scroll-mt-40 flex flex-col items-start gap-3">
+        <div id="services" class="flex flex-col items-start gap-3">
           <Pill>Services</Pill>
           <h2 class="font-display text-5xl">
             Everything you need to <span class="text-alt">thrive online</span>
@@ -76,39 +73,10 @@ import wraps from "../assets/projects/wraps.png";
           </p>
         </div>
         <!--Grid for service cards -->
-        <div id="service-cards" class="grid grid-cols-3 gap-24">
-          <ServiceCard
-            title="Intentional Design"
-            description="We make your website with your brand’s goals in mind at every turn to help you achieve them faster."
-            icon="int-design"
-          />
-          <ServiceCard
-            title="Advanced Interactions"
-            description="From basic to complex animations we help set your site apart by fully leveraging visual storytelling and captivating your users with a high end experience."
-            icon="adv-interactions"
-          />
-          <ServiceCard
-            title="Integrations"
-            description="Connect your website to tools you love like Notion, Airtable, Google Sheets and more."
-            icon="integrations"
-          />
-          <ServiceCard
-            title="Content Creation"
-            description="We create hight-quality content for your blog and manage it through a personalized CMS to make your site easily findable."
-            icon="content-creation"
-          />
-          <ServiceCard
-            title="SEO optimization"
-            description="We audit, optimize and cleanup your website to make it rank faster and higher on search engines and make future endeavors more easily approachable."
-            icon="seo"
-          />
-          <ServiceCard
-            title="Analytics"
-            description="We track your site’s performance using Google Analytics and other tools to help you understand how your users are interacting with your brand."
-            icon="analytics"
-          />
+        <div id="service-cards" class="grid grid-cols-3 gap-16">
+          {services.map((service) => <ServiceCard service={service} />)}
         </div>
-        <div class="mt-16 flex flex-col items-center gap-2">
+        <div id="tech" class="mt-16 flex flex-col items-center gap-2">
           <h3 class="font-display text-xl font-medium">
             We use powerful technologies
           </h3>
@@ -132,7 +100,7 @@ import wraps from "../assets/projects/wraps.png";
         <!--Section header conatining title and description -->
         <div
           id="projects"
-          class="scroll-mt-40 section-header flex flex-col items-center gap-3 text-center"
+          class="section-header flex flex-col items-center gap-3 text-center"
         >
           <Pill>Projects</Pill>
           <h2 class="font-display text-5xl">
@@ -147,42 +115,7 @@ import wraps from "../assets/projects/wraps.png";
         </div>
         <!--Grid for project cards -->
         <ul id="project-cards" class="group/grid grid grid-cols-3 gap-8">
-          <ProjectCard
-            title="La Postreria 77"
-            siteType="Marketing site"
-            image={lp77}
-            service="Design & Development"
-          />
-          <ProjectCard
-            title="Party Game Companion"
-            siteType="Web app"
-            image={pgco}
-            service="Design & Development"
-          />
-          <ProjectCard
-            title="La Pasteleria de La Postreria 77"
-            siteType="Marketing site"
-            image={pasteleria}
-            service="Design & Development"
-          />
-          <ProjectCard
-            title="Herrmat"
-            siteType="E-commerce site"
-            image={herrmat}
-            service="Design & Development"
-          />
-          <ProjectCard
-            title="The Wrap Co."
-            siteType="Marketing site"
-            image={wraps}
-            service="Design"
-          />
-          <ProjectCard
-            title="Otra Marca"
-            siteType="Web app"
-            image={lp77}
-            service="Design & Development"
-          />
+          {projects.map((project) => <ProjectCard project={project} />)}
         </ul>
       </div>
     </section>

@@ -1,14 +1,38 @@
 ---
+import type { GetStaticPaths } from "astro";
+import type { projects } from '../../utils/projects';
 import Layout from '../../layouts/Layout.astro';
-import projects from '../../utils/projects';
+import { projects } from '../../utils/projects';
+import slugify from '../../utils/slugify';
+//import { type Project } from '../../utils/projects';
 
-export function getStaticPaths() {
-  return {
-    paths: projects.map((project) => ({ params: { project } })),
-    fallback: false,
-  };
-}
+
+export async function getStaticPaths() {
+  return projects.map((project) => {
+    return {
+      params: {
+        project: slugify(project.title),
+      },
+      props: {
+        title: project.title,
+        description: project.description,
+      },
+    };
+  });
+} 
 
 const { project } = Astro.params;
+const {title, description} = Astro.props;
+console.log(Astro.props);
 ---
-<div>Project name: {project}</div>
+
+<Layout title={project} description="This projects case study">
+  <header class="min-h-[70vh] bg-dark">
+  <div class="flex flex-col px-page py-40">
+  <h1 class="uppercase text-2xl font-display">{title}</h1>
+  <p class="opacity-60">{description}</p>
+  </div>
+  </header>
+  <section class="min-h-screen bg-light">
+</section>
+</Layout>
