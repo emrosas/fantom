@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Loading animations
   const loadingTl = gsap.timeline();
   const headerComp = document.querySelector("#header-comp");
   const headerCompChildren = headerComp.children;
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ">-0.2",
   );
 
+  // Header scroll animations
   const headerScrollTl = gsap.timeline({
     scrollTrigger: {
       trigger: "header",
@@ -45,13 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
     "<",
   );
 
-  gsap.from(".section-header", {
+  // Services section animations
+  const servicesTl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".section-header",
+      trigger: "#services",
       start: "top 40%",
-      end: "bottom 40%",
-      markers: true, 
+      end: "top 40%",
+      toggleActions: "restart none reverse none",
+      markers: true,
     },
+  });
+  
+  servicesTl.from("#services", {
     opacity: 0,
     y: 20,
     ease: "power2.out",
@@ -59,16 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const serviceCardsChildren = document.querySelector("#service-cards").children;
 
-  gsap.from(serviceCardsChildren, {
-    scrollTrigger: {
-      trigger: "#service-cards",
-      start: "top 40%",
-      end: "bottom 40%",
-      markers: true, 
-    },
+  servicesTl.from(serviceCardsChildren, {
     opacity: 0,
     y: 20,
     ease: "power2.out",
     stagger: 0.05,
-  });
+  }, "<0.1");
 });
