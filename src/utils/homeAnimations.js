@@ -72,4 +72,31 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out",
     stagger: 0.05,
   }, "<0.1");
+
+  // Services section animations
+  const projectsTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#projects",
+      start: "top 40%",
+      end: "top 40%",
+      toggleActions: "restart none reverse none",
+      markers: true,
+    },
+  });
+  
+  projectsTl.from("#projects", {
+    opacity: 0,
+    y: 20,
+    ease: "power2.out",
+  });
+
+  const projectCardsChildren = document.querySelector("#project-cards").children;
+
+  projectsTl.from(projectCardsChildren, {
+    opacity: 0,
+    y: 20,
+    ease: "power2.out",
+    stagger: 0.05,
+  }, "<0.1");
+
 });

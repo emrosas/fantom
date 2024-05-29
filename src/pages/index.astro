@@ -27,10 +27,10 @@ import wraps from "../assets/projects/wraps.png";
   <script src="../utils/homeAnimations.js"></script>
   <main>
     <header
-      class="relative min-h-screen bg-gradient-to-b from-g-secondary to-g-primary flex flex-col gap-8 items-center justify-between pt-32 overflow-clip"
+      class="relative flex min-h-screen flex-col items-center justify-between gap-8 overflow-clip bg-gradient-to-b from-g-secondary to-g-primary pt-32"
     >
       <div
-        class="relative z-20 flex flex-col items-center gap-2 max-w-3xl justify-center text-center flex-grow"
+        class="relative z-20 flex max-w-3xl flex-grow flex-col items-center justify-center gap-2 text-center"
         id="header-comp"
       >
         <h1 class="font-display text-5xl leading-tight">
@@ -39,7 +39,7 @@ import wraps from "../assets/projects/wraps.png";
           > for brands.
         </h1>
         <p
-          class="font-medium text-xl leading-relaxed text-balance opacity-60 mb-4"
+          class="mb-4 text-balance text-xl font-medium leading-relaxed opacity-60"
         >
           We specialize in building intentionally designed websites that create
           more immersive experiences for your users.
@@ -59,18 +59,18 @@ import wraps from "../assets/projects/wraps.png";
       <Image
         src={gridLines}
         alt="Decorative grid lines"
-        class="absolute z-10 top-0 left-0 w-full"
+        class="absolute left-0 top-0 z-10 w-full"
       />
     </header>
     <section class="pb-32 pt-80">
       <div class="flex flex-col gap-28 px-page">
         <!--Section header conatining title and description -->
-        <div id="services" class="flex flex-col items-start gap-3">
+        <div id="services" class="scroll-mt-40 flex flex-col items-start gap-3">
           <Pill>Services</Pill>
-          <h2 class="text-5xl font-display">
+          <h2 class="font-display text-5xl">
             Everything you need to <span class="text-alt">thrive online</span>
           </h2>
-          <p class="font-medium text-xl opacity-60 leading-relaxed">
+          <p class="text-xl font-medium leading-relaxed opacity-60">
             These are some ways we make every website special and help you stand
             out in the online space.
           </p>
@@ -108,11 +108,11 @@ import wraps from "../assets/projects/wraps.png";
             icon="analytics"
           />
         </div>
-        <div class="flex flex-col gap-2 items-center mt-16">
+        <div class="mt-16 flex flex-col items-center gap-2">
           <h3 class="font-display text-xl font-medium">
             We use powerful technologies
           </h3>
-          <p class="opacity-60 font-medium">
+          <p class="font-medium opacity-60">
             That will make your website fast, reliable and stand the test of
             time.
           </p>
@@ -127,23 +127,26 @@ import wraps from "../assets/projects/wraps.png";
         </div>
       </div>
     </section>
-    <section class="pt-32 pb-60">
+    <section class="pb-60 pt-32">
       <div class="flex flex-col gap-20 px-page">
         <!--Section header conatining title and description -->
-        <div class="section-header flex flex-col items-center text-center gap-3">
+        <div
+          id="projects"
+          class="scroll-mt-40 section-header flex flex-col items-center gap-3 text-center"
+        >
           <Pill>Projects</Pill>
-          <h2 class="text-5xl font-display">
+          <h2 class="font-display text-5xl">
             We believe our work <span class="text-alt">defines us</span>
           </h2>
           <p
-            class="font-medium text-xl opacity-60 max-w-[50ch] leading-relaxed"
+            class="max-w-[50ch] text-xl font-medium leading-relaxed opacity-60"
           >
             We focus on making every project tell it’s unique story and help the
             business thrive in the online space.
           </p>
         </div>
         <!--Grid for project cards -->
-        <ul class="grid grid-cols-3 gap-8 group/grid">
+        <ul id="project-cards" class="group/grid grid grid-cols-3 gap-8">
           <ProjectCard
             title="La Postreria 77"
             siteType="Marketing site"
