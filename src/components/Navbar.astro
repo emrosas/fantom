@@ -5,40 +5,37 @@ import Button from "./ui/Button.astro";
 
 <script src="../utils/navAnimation.js"></script>
 
-<nav id="nav" class="fixed top-0 left-0 right-0 text-light z-40">
-  <div
-    class="px-page py-8 flex items-center justify-between gap-16 relative z-20"
+<header
+  id="nav"
+  class="sticky left-0 right-0 top-0 z-40 flex items-center justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20"
+>
+  <a
+    href="/"
+    class="transition duration-300 ease-out hover:-translate-y-[2px] hover:text-white"
   >
-    <a
-      href="/"
-      class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
+    <Icon name="logo" class="hidden h-6 w-32 text-dark sm:block" />
+    <Icon name="ghost" class="size-8 text-dark sm:hidden" />
+  </a>
+  <div class="flex items-center gap-4">
+    <nav
+      class="hidden list-none items-center rounded-lg border border-dark bg-light ~text-xs/base sm:flex"
     >
-      <Icon name="logo" class="w-32 h-6" />
-    </a>
-    <div class="flex items-center justify-between flex-grow">
-      <menu class="flex items-center gap-12">
-        <li
-          class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
-        >
-          <a href="/#services" class="py-2">Services</a>
-        </li>
-        <li
-          class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
-        >
-          <a href="/#projects" class="py-2">Projects</a>
-        </li>
-        <li
-          class="hover:-translate-y-[2px] ease-out transition duration-300 hover:text-white"
-        >
-          <a href="#contact" class="py-2">Contact</a>
-        </li>
-      </menu>
-      <Button icon="proposal">Request a Proposal</Button>
-    </div>
+      <li
+        class="rounded-lg px-4 py-2 transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%]"
+      >
+        <a href="/#services">Servicios</a>
+      </li>
+      <li
+        class="rounded-lg px-4 py-2 transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%]"
+      >
+        <a href="/#projects">Proyectos Destacados</a>
+      </li>
+      <li
+        class="rounded-lg px-4 py-2 transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%]"
+      >
+        <a href="#contact">Contactos</a>
+      </li>
+    </nav>
+    <Button icon="arrow-fwd" intent={"secondary"}>Solicitar Cotización</Button>
   </div>
-  <div
-    id="navBg"
-    class="absolute bg-dark-2 inset-0 z-10"
-  >
-  </div>
-</nav>
+</header>

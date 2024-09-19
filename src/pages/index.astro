@@ -2,122 +2,60 @@
 // Component imports
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import Button from "../components/ui/Button.astro";
-import Pill from "../components/ui/Pill.astro";
+import { Icon } from "astro-icon/components";
+// import Pill from "../components/ui/Pill.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+// import ProjectCard from "../components/ProjectCard.astro";
 
 // Asset imports
-import gridLines from "../assets/grid-lines.svg";
-import headerTablet from "../assets/header-tablet.png";
+import hero from "../assets/hero.png";
+// import gridLines from "../assets/grid-lines.svg";
+// import headerTablet from "../assets/header-tablet.png";
 
 // Data imports
 import { services } from "../utils/services";
-import { projects } from "../utils/projects";
+// import { projects } from "../utils/projects";
 ---
 
-<Layout
-  title="Fantom | Design & Development"
-  description="We develop unique websites to help  brands reach their business goals."
->
-  <script src="../utils/homeAnimations.js"></script>
+<Layout title="Fantom" description="Web Design and development agency.">
   <main>
-    <header
-      class="relative flex min-h-screen flex-col items-center justify-between gap-8 overflow-clip bg-gradient-to-b from-g-secondary to-g-primary pt-32"
-    >
-      <div
-        class="relative z-20 flex max-w-3xl flex-grow flex-col items-center justify-center gap-2 text-center"
-        id="header-comp"
-      >
-        <h1 class="font-display text-5xl leading-tight">
-          Unique websites that <br /><span class="text-alt"
-            >increase conversions</span
-          > for brands.
-        </h1>
-        <p
-          class="mb-4 text-balance text-xl font-medium leading-relaxed opacity-60"
-        >
-          We specialize in building intentionally designed websites that create
-          more immersive experiences for your users.
-        </p>
-        <div>
-          <Button intent={"secondary"} icon="proposal"
-            >Request a Proposal</Button
-          >
-        </div>
-      </div>
-      <Image
-        src={headerTablet}
-        alt="Tablet mockup that shows good user experience."
-        class="relative z-20 w-4/5"
-        id="header-tablet"
-      />
-      <Image
-        src={gridLines}
-        alt="Decorative grid lines"
-        class="absolute left-0 top-0 z-10 w-full"
-      />
-    </header>
-    <section class="pb-32 pt-80">
-      <div class="flex flex-col gap-28 px-page">
-        <!--Section header conatining title and description -->
-        <div id="services" class="flex flex-col items-start gap-3">
-          <Pill>Services</Pill>
-          <h2 class="font-display text-5xl">
-            Everything you need to <span class="text-alt">thrive online</span>
-          </h2>
-          <p class="text-xl font-medium leading-relaxed opacity-60">
-            These are some ways we make every website special and help you stand
-            out in the online space.
+    <!-- Hero -->
+    <section id="top">
+      <div class="pb-20 pt-32 ~px-4/56">
+        <div class="flex flex-col items-center gap-4 text-balance text-center">
+          <h1 class="leading-tight ~/lg:~text-4xl/6xl">
+            Sitios web que ayudan a las marcas a <span class="font-semibold"
+              >alcanzar sus objetivos.</span
+            >
+          </h1>
+          <p class="~text-base/lg">
+            Somos un dúo diseñador / desarrollador con experiencia en crear
+            experiencias digitales que se sienten geniales, funcionan bien y
+            resuelven problemas reales para los negocios.
           </p>
-        </div>
-        <!--Grid for service cards -->
-        <div id="service-cards" class="grid grid-cols-3 gap-16">
-          {services.map((service) => <ServiceCard service={service} />)}
-        </div>
-        <div id="tech" class="mt-16 flex flex-col items-center gap-2">
-          <h3 class="font-display text-xl font-medium">
-            We use powerful technologies
-          </h3>
-          <p class="font-medium opacity-60">
-            That will make your website fast, reliable and stand the test of
-            time.
-          </p>
-          <div class="flex gap-8">
-            <Icon name="tech/webflow" class="size-12" />
-            <Icon name="tech/astro" class="size-12" />
-            <Icon name="tech/react" class="size-12" />
-            <Icon name="tech/tailwind" class="size-12" />
-            <Icon name="tech/vercel" class="size-12" />
-            <Icon name="tech/supabase" class="size-12" />
+          <div class="mt-2 grid w-full ~gap-2/6 sm:w-auto sm:grid-cols-2">
+            <Button icon="arrow-fwd">Solicitar Cotización</Button>
+            <Button icon="arrow-fwd" intent={"terciary"}>Ver Proyectos</Button>
           </div>
         </div>
       </div>
-    </section>
-    <section class="pb-60 pt-32">
-      <div class="flex flex-col gap-20 px-page">
-        <!--Section header conatining title and description -->
-        <div
-          id="projects"
-          class="section-header flex flex-col items-center gap-3 text-center"
-        >
-          <Pill>Projects</Pill>
-          <h2 class="font-display text-5xl">
-            We believe our work <span class="text-alt">defines us</span>
-          </h2>
-          <p
-            class="max-w-[50ch] text-xl font-medium leading-relaxed opacity-60"
-          >
-            We focus on making every project tell it’s unique story and help the
-            business thrive in the online space.
-          </p>
-        </div>
-        <!--Grid for project cards -->
-        <ul id="project-cards" class="group/grid grid grid-cols-3 gap-8">
-          {projects.map((project) => <ProjectCard project={project} />)}
-        </ul>
+      <div>
+        <Image src={hero} alt={"A set of glass cards"} />
       </div>
+    </section>
+    <!-- Services -->
+    <section class="flex flex-col py-20 ~gap-12/16 ~px-4/56">
+      <div class="flex flex-wrap items-end gap-2">
+        <h2 class="font-medium leading-tight ~text-4xl/5xl">
+          Servicios para <span class="text-brand">triunfar en la web</span>
+        </h2>
+        <Icon name={"arrow-dia"} class="size-12 rotate-90" />
+      </div>
+      <div class="grid grid-cols-1 ~gap-8/16 md:grid-cols-2">
+        {services.map((service) => <ServiceCard service={service} />)}
+      </div>
+      <div>Aquí van los logos de las tecnologías.</div>
     </section>
   </main>
 </Layout>

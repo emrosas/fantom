@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 // Font imports
-import '@fontsource-variable/outfit';
+import "@fontsource-variable/outfit";
 
 // Props type
 interface Props {
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="stylesheet" href="https://use.typekit.net/zmd4nhu.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zmd4nhu.css" />
     <meta name="generator" content={Astro.generator} />
     <SEO
       title={title}
@@ -38,37 +38,31 @@ const { title, description } = Astro.props;
       }}
     />
   </head>
-  <body class="p-0 m-0 bg-dark-2 text-light font-body overscroll-none overflow-x-clip">
+  <body
+    class="m-0 overflow-x-clip overscroll-none bg-light p-0 font-sans font-normal tracking-tighter text-dark"
+  >
     <Navbar />
     <slot />
     <Footer />
     <style is:global>
       @font-face {
-        font-family: 'Neue-Regrade-Variable';
-        src: url('../fonts/Neue-Regrade-Variable.ttf') format('truetype');
+        font-family: "Geist-Sans";
+        src: url("../fonts/GeistVF.ttf") format("truetype");
         font-weight: 300 800;
         font-display: swap;
         font-style: normal;
       }
       @font-face {
-        font-family: "itc-avant-garde-gothic-pro", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "itc-avant-garde-gothic-pro", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "itc-avant-garde-gothic-pro", sans-serif;
-        font-weight: 700;
+        font-family: "Geist-Mono";
+        src: url("../fonts/GeistMonoVF.ttf") format("truetype");
+        font-weight: 300 800;
+        font-display: swap;
         font-style: normal;
       }
       :root {
         /* Spacing variables */
         --page-main: var(--page-desktop);
-        --page-desktop: 3rem;
+        --page-desktop: 15rem;
         --page-tablet: 1.25rem;
         --page-mobile: 1rem;
       }

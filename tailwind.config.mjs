@@ -1,29 +1,29 @@
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: {
+    files: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+    extract,
+  },
   theme: {
+    fontSize,
+    screens,
     fontFamily: {
-      body: ["Neue-Regrade-Variable", "sans-serif"],
-      display: ["itc-avant-garde-gothic-pro", "sans-serif"],
+      sans: ["Geist-Sans", "sans-serif"],
+      mono: ["Geist-Mono", "monospace"],
     },
     extend: {
       colors: {
-        "g-primary": "#000E7A",
-        "g-secondary": "#000529",
-        "g-tertiary": "#001CEA",
-        "g-quaternary": "#3951FF",
-        "brand-1": "#0013A3",
-        alt: "#475DFF",
-        "brand-2": "#4B1AFF",
         light: "#FCFCFC",
-        dark: "#060623",
-        "dark-2": "#030311",
-        "alt-2": "#C3B2FF",
+        dark: "#0C0C46",
+        brand: "#4343EE",
+        "brand-2": "#0000FF",
       },
       spacing: {
         page: "var(--page-main)",
       },
     },
   },
-  plugins: [],
+  plugins: [fluid],
 };
