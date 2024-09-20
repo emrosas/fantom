@@ -1,39 +1,41 @@
 ---
 import { Image } from "astro:assets";
-import Pill from "./ui/Pill.astro";
-import { type Project } from "../utils/projectsInfo";
 import slugify from "../utils/slugify";
 
 interface Props {
-  project: Project;
+  project: {
+    name: string;
+    title: string;
+    image: {
+      src: string;
+      alt: string;
+    };
+    tags: string[];
+  };
 }
-
 const { project } = Astro.props;
-const { title, imageSrc, imageAlt, siteType, service } = project;
-const slug = slugify(title);
+const { name, title, image, tags } = project;
+const slug = slugify(name);
 ---
 
-<li class="group/project">
-  <a href={`/projects/${slug}`} class="flex flex-col gap-4 transition duration-500 ease-out">
-    <div
-      class="rounded-xl overflow-hidden aspect-square group-hover/project:rounded-3xl duration-500 ease-out"
-    >
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        width={500}
-        height={500}
-        class="size-full object-cover group-hover/project:scale-105 transition duration-500 ease-out"
-      />
-    </div>
-    <div class="flex justify-between gap-8">
-      <div class="flex flex-col gap-2 items-start">
-        <h3 class="text-2xl font-display">{title}</h3>
-        <Pill intent={"secondary"}>{siteType}</Pill>
-      </div>
-      <p class="text-xl">
-        {service}
-      </p>
-    </div>
-  </a>
+<li class="flex flex-col gap-4">
+  <Image
+    src={image.src}
+    alt={image.alt}
+    width={640}
+    height={640}
+    class="aspect-[6/4] w-full rounded-lg bg-dark object-cover"
+  />
+  <h5 class="text-sm text-brand">{name}</h5>
+  <a href={`/projects/${slug}`} class="-mt-1 text-2xl">{title}</a>
+  <ul class="flex items-center gap-2 opacity-40">
+    {
+      tags.map((tag, index) => (
+        <li class="flex items-center gap-2">
+          <span class="font-mono text-xs">{tag}</span>
+          {index !== tags.length - 1 && <div class="size-1 bg-dark" />}
+        </li>
+      ))
+    }
+  </ul>
 </li>

@@ -1,11 +1,10 @@
 ---
 import type { GetStaticPaths } from "astro";
-import type { projects } from '../../utils/projects';
-import Layout from '../../layouts/Layout.astro';
-import { projects } from '../../utils/projects';
-import slugify from '../../utils/slugify';
+import type { Project } from "../../utils/projects";
+import Layout from "../../layouts/Layout.astro";
+import { projects } from "../../utils/projects";
+import slugify from "../../utils/slugify";
 //import { type Project } from '../../utils/projects';
-
 
 export async function getStaticPaths() {
   return projects.map((project) => {
@@ -19,20 +18,19 @@ export async function getStaticPaths() {
       },
     };
   });
-} 
+}
 
 const { project } = Astro.params;
-const {title, description} = Astro.props;
+const { title, description } = Astro.props;
 console.log(Astro.props);
 ---
 
 <Layout title={project} description="This projects case study">
   <header class="min-h-[70vh] bg-dark">
-  <div class="flex flex-col px-page py-40">
-  <h1 class="uppercase text-2xl font-display">{title}</h1>
-  <p class="opacity-60">{description}</p>
-  </div>
+    <div class="flex flex-col px-page py-40">
+      <h1 class="font-display text-2xl uppercase">{title}</h1>
+      <p class="opacity-60">{description}</p>
+    </div>
   </header>
-  <section class="min-h-screen bg-light">
-</section>
+  <section class="min-h-screen bg-light"></section>
 </Layout>

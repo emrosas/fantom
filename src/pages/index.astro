@@ -15,21 +15,22 @@ import hero from "../assets/hero.png";
 
 // Data imports
 import { services } from "../utils/services";
+import ProjectCard from "../components/ProjectCard.astro";
 // import { projects } from "../utils/projects";
 ---
 
 <Layout title="Fantom" description="Web Design and development agency.">
   <main>
     <!-- Hero -->
-    <section id="top">
-      <div class="pb-20 pt-32 ~px-4/56">
-        <div class="flex flex-col items-center gap-4 text-balance text-center">
-          <h1 class="leading-tight ~/lg:~text-4xl/6xl">
+    <section id="top" class="flex flex-col items-center overflow-x-clip">
+      <div class="pb-24 ~px-4/56 ~pt-24/32">
+        <div class="flex flex-col items-center gap-4 text-center">
+          <h1 class="text-balance leading-tight ~/lg:~text-4xl/6xl">
             Sitios web que ayudan a las marcas a <span class="font-semibold"
               >alcanzar sus objetivos.</span
             >
           </h1>
-          <p class="~text-base/lg">
+          <p class="~text-base/lg sm:text-balance">
             Somos un dúo diseñador / desarrollador con experiencia en crear
             experiencias digitales que se sienten geniales, funcionan bien y
             resuelven problemas reales para los negocios.
@@ -40,22 +41,76 @@ import { services } from "../utils/services";
           </div>
         </div>
       </div>
-      <div>
+      <div class="w-[135%] sm:w-full">
         <Image src={hero} alt={"A set of glass cards"} />
       </div>
     </section>
     <!-- Services -->
     <section class="flex flex-col py-20 ~gap-12/16 ~px-4/56">
-      <div class="flex flex-wrap items-end gap-2">
+      <div class="flex flex-wrap items-center ~gap-2/4">
         <h2 class="font-medium leading-tight ~text-4xl/5xl">
           Servicios para <span class="text-brand">triunfar en la web</span>
         </h2>
-        <Icon name={"arrow-dia"} class="size-12 rotate-90" />
+        <Icon name={"arrow-dia"} class="~size-6/8" />
       </div>
-      <div class="grid grid-cols-1 ~gap-8/16 md:grid-cols-2">
+      <div
+        class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] ~gap-8/16"
+      >
         {services.map((service) => <ServiceCard service={service} />)}
       </div>
-      <div>Aquí van los logos de las tecnologías.</div>
+      <div class="mt-16 flex flex-col items-center gap-1 text-center">
+        <h3 class="text-xl font-medium">Utilizamos tecnologías poderosas.</h3>
+        <p class="font-regular leading-relaxed opacity-60">
+          Que harán que tu sitio web sea rápido, confiable y resista el paso del
+          tiempo.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Icon name="tech/webflow" class="size-10" />
+          <Icon name="tech/astro" class="size-10" />
+          <Icon name="tech/react" class="size-10" />
+          <Icon name="tech/tailwind" class="size-10" />
+          <Icon name="tech/vercel" class="size-10" />
+          <Icon name="tech/supabase" class="size-10" />
+        </div>
+      </div>
     </section>
-  </main>
-</Layout>
+    <!-- Projects -->
+    <section class="flex flex-col py-20 ~gap-12/16 ~px-4/56">
+      <div class="flex flex-wrap items-center ~gap-2/4">
+        <h2 class="font-medium leading-tight ~text-4xl/5xl">
+          Proyectos <span class="text-brand">Destacados</span>
+        </h2>
+        <Icon name={"arrow-dia"} class="~size-6/8" />
+      </div>
+      <ul class="grid gap-8 sm:grid-cols-2">
+        <ProjectCard
+          project={{
+            name: "La Postreria 77",
+            title:
+              "A Clean and functional Website with a QR Menu powered by Webflow’s CMS.",
+            image: { src: "/images/lp.jpg", alt: "Project Image" },
+            tags: ["Webflow", "Webflow CMS", "Lottie"],
+          }}
+        />
+        <ProjectCard
+          project={{
+            name: "Party Game Companion",
+            title:
+              "A web app that allows you to keep score and display an aesthetic leaderboard.",
+            image: { src: "/images/pgc.jpg", alt: "Project Image" },
+            tags: ["React", "Vite", "Tailwind", "Zustand"],
+          }}
+        />
+        <ProjectCard
+          project={{
+            name: "La Pastelería de La Postreria 77",
+            title:
+              "A Minimal Landing page built with the power of Astro and Content Collections to achieve max speed.",
+            image: { src: "/images/lpdlp.jpg", alt: "Project Image" },
+            tags: ["Astro", "React", "TailwindCSS", "libSQL", "Vercel"],
+          }}
+        />
+      </ul>
+    </section>
+  </main></Layout
+>
