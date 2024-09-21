@@ -12,22 +12,31 @@ interface Props {
     };
     tags: string[];
   };
+  gridPlacement?: string;
 }
-const { project } = Astro.props;
+const { project, gridPlacement } = Astro.props;
 const { name, title, image, tags } = project;
 const slug = slugify(name);
 ---
 
-<li class="flex flex-col gap-4">
-  <Image
-    src={image.src}
-    alt={image.alt}
-    width={640}
-    height={640}
-    class="aspect-[6/4] w-full rounded-lg bg-dark object-cover"
-  />
+<li class=`flex flex-col gap-4 group ${gridPlacement}`>
+  <div
+    class="relative aspect-[7/4] w-full flex-grow overflow-clip rounded-lg bg-dark"
+  >
+    <Image
+      src={image.src}
+      alt={image.alt}
+      width={640}
+      height={640}
+      class="absolute inset-0 size-full object-cover transition duration-500 ease-out group-hover:scale-105"
+    />
+  </div>
   <h5 class="text-sm text-brand">{name}</h5>
-  <a href={`/projects/${slug}`} class="-mt-1 text-2xl">{title}</a>
+  <a
+    href={`/projects/${slug}`}
+    class="-mb-1 -mt-2 text-2xl transition-all duration-200 ease-out hover:text-brand hover:underline"
+    >{title}</a
+  >
   <ul class="flex items-center gap-2 opacity-40">
     {
       tags.map((tag, index) => (
