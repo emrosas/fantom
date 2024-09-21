@@ -10,24 +10,25 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/outfit": "^5.0.12",
-    "astro": "^4.4.15",
-    "astro-icon": "^1.1.0",
-    "astro-seo": "^0.8.3",
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/tailwind": "^5.1.1",
+    "@fontsource-variable/outfit": "^5.1.0",
+    "astro": "^4.15.8",
+    "astro-icon": "^1.1.1",
+    "astro-seo": "^0.8.4",
     "astro-tunnel": "^0.1.6",
     "class-variance-authority": "^0.7.0",
     "gsap": "^3.12.5",
+    "sharp": "^0.33.5",
     "split-text-js": "^1.0.3",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2"
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.6.2"
   },
   "devDependencies": {
-    "eslint": "^9.0.0",
+    "eslint": "^9.11.0",
     "eslint-plugin-astro": "^0.34.0",
     "fluid-tailwind": "^1.0.3",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.5.14"
   }
 }
