@@ -5,7 +5,7 @@ import Button from "./ui/Button.astro";
 
 <header
   id="nav"
-  class="sticky left-0 right-0 top-0 z-50 flex flex-col justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20 sm:flex-row sm:items-center"
+  class="ite sticky left-0 right-0 top-0 z-50 flex h-nav flex-col justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20 sm:h-auto sm:flex-row sm:items-center"
 >
   <div class="flex justify-between gap-8">
     <a
@@ -19,33 +19,30 @@ import Button from "./ui/Button.astro";
       ><Icon name="burger" class="size-9 sm:hidden" /></button
     >
   </div>
-  <div class="hidden grid-rows-[0fr] sm:block" id="menu-container">
-    <div
-      id="menu"
-      class="mb-4 mt-8 flex flex-col gap-6 overflow-hidden sm:flex sm:h-auto sm:flex-row"
+  <div
+    id="menu"
+    class="invisible absolute left-0 right-0 top-nav flex flex-col gap-6 overflow-hidden bg-light px-4 py-6 sm:visible sm:flex sm:h-auto sm:flex-row sm:p-0"
+  >
+    <nav
+      class="flex list-none flex-col gap-4 rounded-lg border-dark ~text-xs/base sm:flex-row sm:items-center sm:gap-0 sm:border-[1.5px]"
     >
-      <nav
-        class="flex list-none flex-col gap-4 rounded-lg border-dark ~text-xs/base sm:flex-row sm:items-center sm:gap-0 sm:border-[1.5px]"
+      <li
+        class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
       >
-        <li
-          class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
-        >
-          <a href="/#services">Servicios</a>
-        </li>
-        <li
-          class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
-        >
-          <a href="/#projects">Proyectos Destacados</a>
-        </li>
-        <li
-          class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
-        >
-          <a href="#contact">Contactos</a>
-        </li>
-      </nav>
-      <Button icon="arrow-fwd" intent={"secondary"}>Solicitar Cotización</Button
+        <a href="/#services">Servicios</a>
+      </li>
+      <li
+        class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
       >
-    </div>
+        <a href="/#projects">Proyectos Destacados</a>
+      </li>
+      <li
+        class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
+      >
+        <a href="#contact">Contactos</a>
+      </li>
+    </nav>
+    <Button icon="arrow-fwd" intent={"secondary"}>Solicitar Cotización</Button>
   </div>
 </header>
 <div
@@ -62,7 +59,7 @@ import Button from "./ui/Button.astro";
     tl.to("#menu-bg", {
       display: "block",
       opacity: 1,
-      duration: 0.5,
+      duration: 0.25,
       ease: "power3.out",
     });
     tl.to(
@@ -76,19 +73,14 @@ import Button from "./ui/Button.astro";
       "#nav",
       {
         backgroundColor: "#FCFCFC",
-        duration: 0.35,
-        ease: "power3.out",
+        duration: 0,
       },
       "<",
     );
     tl.to(
-      "#menu-container",
+      "#menu",
       {
-        display: "grid",
-        gridTemplateColumns: "1fr",
-        gridTemplateRows: "1fr",
-        duration: 0.45,
-        ease: "power3.inOut",
+        visibility: "visible",
       },
       "<",
     );

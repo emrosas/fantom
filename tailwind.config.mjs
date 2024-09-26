@@ -14,6 +14,9 @@ export default {
       mono: ["Geist-Mono", "monospace"],
     },
     extend: {
+      height: {
+        nav: "var(--nav-height)",
+      },
       colors: {
         light: "#FCFCFC",
         dark: "#0C0C46",
@@ -22,6 +25,7 @@ export default {
       },
       spacing: {
         page: "var(--page-main)",
+        nav: "var(--nav-height)",
       },
     },
   },
