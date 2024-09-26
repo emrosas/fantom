@@ -7,12 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Loading animations
   const loadingTl = gsap.timeline();
   const headerComp = document.querySelector("#header-comp");
-  const headerCompChildren = headerComp.children;
 
   loadingTl.from("header", { opacity: 0, duration: 1.5 });
 
   loadingTl.from(
-    headerCompChildren,
+    headerComp.children,
     {
       opacity: 0,
       y: 20,
@@ -56,27 +55,36 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "restart none reverse none",
     },
   });
-  
+
   servicesTl.from("#services", {
     opacity: 0,
     y: 20,
     ease: "power2.out",
   });
 
-  const serviceCardsChildren = document.querySelector("#service-cards").children;
+  const serviceCardsChildren =
+    document.querySelector("#service-cards").children;
 
-  servicesTl.from(serviceCardsChildren, {
-    opacity: 0,
-    y: 20,
-    ease: "power2.out",
-    stagger: 0.05,
-  }, "<0.1");
-  
-  servicesTl.from("#tech", {
-    opacity: 0,
-    y: 20,
-    ease: "power2.out",
-  }, "<0.3");
+  servicesTl.from(
+    serviceCardsChildren,
+    {
+      opacity: 0,
+      y: 20,
+      ease: "power2.out",
+      stagger: 0.05,
+    },
+    "<0.1",
+  );
+
+  servicesTl.from(
+    "#tech",
+    {
+      opacity: 0,
+      y: 20,
+      ease: "power2.out",
+    },
+    "<0.3",
+  );
 
   // Services section animations
   const projectsTl = gsap.timeline({
@@ -87,20 +95,24 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "restart none reverse none",
     },
   });
-  
+
   projectsTl.from("#projects", {
     opacity: 0,
     y: 20,
     ease: "power2.out",
   });
 
-  const projectCardsChildren = document.querySelector("#project-cards").children;
+  const projectCardsChildren =
+    document.querySelector("#project-cards").children;
 
-  projectsTl.from(projectCardsChildren, {
-    opacity: 0,
-    y: 20,
-    ease: "power2.out",
-    stagger: 0.05,
-  }, "<0.1");
-
+  projectsTl.from(
+    projectCardsChildren,
+    {
+      opacity: 0,
+      y: 20,
+      ease: "power2.out",
+      stagger: 0.05,
+    },
+    "<0.1",
+  );
 });

@@ -5,35 +5,101 @@ import Button from "./ui/Button.astro";
 
 <header
   id="nav"
-  class="sticky left-0 right-0 top-0 z-40 flex items-center justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20"
+  class="sticky left-0 right-0 top-0 z-50 flex flex-col justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20 sm:flex-row sm:items-center"
 >
-  <a
-    href="/"
-    class="transition duration-300 ease-out hover:-translate-y-[2px] hover:text-white"
-  >
-    <Icon name="logo" class="hidden h-6 w-32 text-dark sm:block" />
-    <Icon name="ghost" class="size-8 text-dark sm:hidden" />
-  </a>
-  <div class="hidden items-center gap-4 sm:flex">
-    <nav
-      class="flex list-none items-center rounded-lg border border-dark bg-light ~text-xs/base"
+  <div class="flex justify-between gap-8">
+    <a
+      href="/"
+      class="transition duration-300 ease-out hover:-translate-y-[2px] hover:text-white"
     >
-      <li
-        class="rounded-lg px-4 py-2 transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%]"
+      <Icon name="logo" class="hidden h-6 w-32 text-dark sm:block" />
+      <Icon name="eyes" class="size-8 text-dark sm:hidden" />
+    </a>
+    <button class="menu-toggle z-50" id="menu-toggle"
+      ><Icon name="burger" class="size-9 sm:hidden" /></button
+    >
+  </div>
+  <div class="hidden grid-rows-[0fr] sm:block" id="menu-container">
+    <div
+      id="menu"
+      class="mb-4 mt-8 flex flex-col gap-6 overflow-hidden sm:flex sm:h-auto sm:flex-row"
+    >
+      <nav
+        class="flex list-none flex-col gap-4 rounded-lg border-dark ~text-xs/base sm:flex-row sm:items-center sm:gap-0 sm:border-[1.5px]"
       >
-        <a href="/#services">Servicios</a>
-      </li>
-      <li
-        class="rounded-lg px-4 py-2 transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%]"
+        <li
+          class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
+        >
+          <a href="/#services">Servicios</a>
+        </li>
+        <li
+          class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
+        >
+          <a href="/#projects">Proyectos Destacados</a>
+        </li>
+        <li
+          class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
+        >
+          <a href="#contact">Contactos</a>
+        </li>
+      </nav>
+      <Button icon="arrow-fwd" intent={"secondary"}>Solicitar Cotización</Button
       >
-        <a href="/#projects">Proyectos Destacados</a>
-      </li>
-      <li
-        class="rounded-lg px-4 py-2 transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%]"
-      >
-        <a href="#contact">Contactos</a>
-      </li>
-    </nav>
-    <Button icon="arrow-fwd" intent={"secondary"}>Solicitar Cotización</Button>
+    </div>
   </div>
 </header>
+<div
+  id="menu-bg"
+  class="menu-toggle fixed inset-0 z-40 hidden bg-dark bg-opacity-60 opacity-0 backdrop-blur"
+>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  if (window.matchMedia("(max-width: 39.99rem)").matches) {
+    const tl = gsap.timeline({ paused: true });
+
+    tl.to("#menu-bg", {
+      display: "block",
+      opacity: 1,
+      duration: 0.5,
+      ease: "power3.out",
+    });
+    tl.to(
+      "body",
+      {
+        overflow: "hidden",
+      },
+      "<",
+    );
+    tl.to(
+      "#nav",
+      {
+        backgroundColor: "#FCFCFC",
+        duration: 0.35,
+        ease: "power3.out",
+      },
+      "<",
+    );
+    tl.to(
+      "#menu-container",
+      {
+        display: "grid",
+        gridTemplateColumns: "1fr",
+        gridTemplateRows: "1fr",
+        duration: 0.45,
+        ease: "power3.inOut",
+      },
+      "<",
+    );
+
+    function toggleMenu() {
+      tl.reversed() ? tl.play() : tl.reverse();
+    }
+
+    const menuToggles = document.querySelectorAll(".menu-toggle");
+    menuToggles.forEach((menuToggle) => {
+      menuToggle.addEventListener("click", () => toggleMenu());
+    });
+  }
+</script>
