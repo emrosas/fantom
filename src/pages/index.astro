@@ -57,7 +57,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         <Icon name={"arrow-dia"} class="~size-6/8" />
       </div>
       <div
-        class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] ~gap-8/16"
+        class="grid ~gap-8/16 sm:grid-cols-[repeat(auto-fit,minmax(320px,1fr))]"
       >
         {services.map((service) => <ServiceCard service={service} />)}
       </div>

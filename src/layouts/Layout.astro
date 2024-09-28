@@ -60,26 +60,10 @@ const { title, description } = Astro.props;
         font-style: normal;
       }
       :root {
-        /* Spacing variables */
-        --page-main: var(--page-desktop);
-        --page-desktop: 15rem;
-        --page-tablet: 1.25rem;
-        --page-mobile: 1rem;
-
         /* Font variables */
-        --nav-height: 5rem;
+        --nav-height: 4.5rem;
       }
 
-      @media (max-width: 1024px) {
-        :root {
-          --page-main: var(--page-tablet);
-        }
-      }
-      @media (max-width: 768px) {
-        :root {
-          --page-main: var(--page-mobile);
-        }
-      }
       .hide-scrollbar::-webkit-scrollbar {
         display: none;
       }
