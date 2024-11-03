@@ -20,12 +20,14 @@ export interface Props
   extends HTMLAttributes<"button">,
     VariantProps<typeof button> {
   icon?: string;
+  proposal?: boolean;
+  type: "submit" | "reset" | "button";
 }
 
-const { intent = "primary", icon } = Astro.props;
+const { intent = "primary", icon, proposal, type } = Astro.props;
 ---
 
-<button class={button({ intent })}>
+<button type={type} proposal-toggle={proposal} class={button({ intent })}>
   <slot />
   {
     icon && (

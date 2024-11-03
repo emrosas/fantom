@@ -5,7 +5,7 @@ import Button from "./ui/Button.astro";
 
 <header
   id="nav"
-  class="ite sticky left-0 right-0 top-0 z-50 flex h-nav flex-col justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20 sm:h-auto sm:flex-row sm:items-center"
+  class="sticky left-0 right-0 top-0 z-50 flex h-nav flex-col justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20 sm:h-auto sm:flex-row sm:items-center"
 >
   <div class="flex justify-between gap-8">
     <a
@@ -21,7 +21,7 @@ import Button from "./ui/Button.astro";
   </div>
   <div
     id="menu"
-    class="invisible absolute left-0 right-0 top-nav flex flex-col gap-6 overflow-hidden bg-light px-4 py-6 sm:visible sm:static sm:flex sm:h-auto sm:flex-row sm:p-0"
+    class="invisible absolute left-0 right-0 top-nav flex flex-col gap-6 overflow-hidden bg-light px-4 py-6 sm:visible sm:static sm:flex sm:h-auto sm:flex-row sm:bg-none sm:p-0"
   >
     <nav
       class="flex list-none flex-col gap-4 rounded-lg border-dark ~text-xs/base sm:flex-row sm:items-center sm:gap-0 sm:border-[1.5px]"
@@ -42,7 +42,9 @@ import Button from "./ui/Button.astro";
         <a href="#contact">Contactos</a>
       </li>
     </nav>
-    <Button icon="arrow-fwd" intent={"secondary"}>Solicitar Cotización</Button>
+    <Button proposal icon="arrow-fwd" intent={"secondary"}
+      >Solicitar Cotización</Button
+    >
   </div>
 </header>
 <div

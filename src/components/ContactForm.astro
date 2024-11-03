@@ -1,116 +1,112 @@
 ---
+import Button from "./ui/Button.astro";
 import Radio from "./ui/Radio.astro";
 ---
 
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input
-    type="hidden"
-    name="access_key"
-    value="4119a2a2-86c9-4537-b0fc-35d9ba4c9a29"
-  />
-  <input type="hidden" name="subject" value="New Form Submission" />
-  <input type="hidden" name="from_name" value="Emrosas Portfolio" />
-  <input type="hidden" name="replyto" />
-  <input
-    type="hidden"
-    name="redirect"
-    value="http://localhost:4321/submission-complete"
-  />
-  <input
-    type="checkbox"
-    name="botcheck"
-    class="hidden"
-    style="display: none;"
-  />
-
-  <div class="mb-12 flex flex-col gap-4">
-    <label for="service" class="text-xl"
-      >What kind of project can we help you with?<span class="text-red-600"
-        >*</span
-      ></label
-    >
-    <div class="flex gap-4">
-      <Radio id="WB" name="service" value="Web Design" />
-      <Radio id="WD" name="service" value="Web Development" />
-      <Radio id="DD" name="service" value="Design + Development" />
-    </div>
-  </div>
-
-  <div class="mb-12 flex flex-col gap-4">
-    <label for="budget" class="text-xl"
-      >What is your budget range for this project?<span class="text-red-600"
-        >*</span
-      ></label
-    >
-    <div class="flex gap-4">
-      <Radio id="WB" name="budget" value="< $900" />
-      <Radio id="WD" name="budget" value="$900 - $2,000" />
-      <Radio id="WD" name="budget" value="$2,000- $5,000" />
-      <Radio id="WD" name="budget" value="$5,000" />
-    </div>
-  </div>
-
-  <div class="mb-12 flex flex-col gap-4">
-    <label for="social" class="text-xl"
-      >How did you hear about us?<span class="text-red-600">*</span></label
-    >
-    <div class="flex gap-4">
-      <Radio id="social" name="social-media" value="Social Media" />
-      <Radio id="social" name="search" value="Online Search" />
-      <Radio id="social" name="referral" value="Referral" />
-      <Radio id="social" name="other" value="other" />
-    </div>
-  </div>
-
-  <div class="mb-12 flex flex-col gap-4">
-    <label for="details" class="text-xl"
-      >Can you tell us a little more about the project?</label
-    >
-    <div class="my-4 grid grid-cols-2 gap-8">
-      <input
-        type="text"
-        name="name"
-        placeholder="Name*"
-        required
-        class="border-light-1 flex-grow border-b bg-transparent focus:border-b-2 focus:outline-none focus:invalid:border-b-red-600"
-      />
-      <input
-        type="text"
-        name="brand"
-        placeholder="Brand*"
-        required
-        class="border-light-1 flex-grow border-b bg-transparent focus:border-b-2 focus:outline-none focus:invalid:border-b-red-600"
-      />
-    </div>
+<dialog class="overflow-clip rounded-2xl px-8 py-8">
+  <form action="https://api.web3forms.com/submit" method="POST">
     <input
-      type="email"
-      name="email"
-      placeholder="Email*"
-      required
-      class="border-light-1 mb-4 flex-grow border-b bg-transparent focus:border-b-2 focus:outline-none focus:invalid:border-b-red-500"
+      type="hidden"
+      name="access_key"
+      value="4119a2a2-86c9-4537-b0fc-35d9ba4c9a29"
     />
-    <div class="mb-4 flex flex-col gap-2">
-      <textarea
-        name="message"
-        placeholder="Write us a message*"
-        class="border-light-1 min-h-20 flex-grow border-b bg-transparent invalid:border-b-red-600 focus:border-b-2 focus:outline-none"
-      ></textarea>
-      <p>
-        Please give us some details about your project and what you need help
-        with.
-      </p>
-    </div>
-  </div>
-  <div class="flex justify-end">
-    <button
-      type="submit"
-      class="text-light-1 hover:shadow-highlight group relative overflow-clip rounded-lg px-4 py-2 shadow-md transition-all duration-200 hover:-translate-y-[2px]"
-    >
-      <div class="relative z-10">Send Message</div>
-      <div
-        class="from-gradient-2 to-gradient-1 absolute bottom-0 left-0 top-0 z-0 w-[300%] bg-gradient-to-tr transition duration-300 group-hover:-translate-x-1/2"
+    <input type="hidden" name="subject" value="New Form Submission" />
+    <input type="hidden" name="from_name" value="Fantom Web Contact" />
+    <input type="hidden" name="replyto" />
+    <input type="hidden" name="redirect" value="/submission-complete" />
+    <input
+      type="checkbox"
+      name="botcheck"
+      class="hidden"
+      style="display: none;"
+    />
+
+    <div class="mb-12 flex flex-col gap-4">
+      <label for="service" class="text-xl"
+        >What kind of project can we help you with?<span class="text-red-600"
+          >*</span
+        ></label
       >
+      <div class="flex gap-4">
+        <Radio id="WB" name="service" value="Web Design" />
+        <Radio id="WD" name="service" value="Web Development" />
+        <Radio id="DD" name="service" value="Design + Development" />
       </div>
-    </button>
-  </div>
-</form>
+    </div>
+
+    <div class="mb-12 flex flex-col gap-4">
+      <label for="budget" class="text-xl"
+        >What is your budget range for this project?<span class="text-red-600"
+          >*</span
+        ></label
+      >
+      <div class="flex gap-4">
+        <Radio id="900" name="budget" value="< $900" />
+        <Radio id="900-2000" name="budget" value="$900 - $2,000" />
+        <Radio id="2000-5000" name="budget" value="$2,000- $5,000" />
+        <Radio id="5000" name="budget" value="$5,000" />
+      </div>
+    </div>
+
+    <div class="mb-12 flex flex-col gap-4">
+      <label for="social" class="text-xl"
+        >How did you hear about us?<span class="text-red-600">*</span></label
+      >
+      <div class="flex gap-4">
+        <Radio id="social" name="find" value="Social Media" />
+        <Radio id="search" name="find" value="Online Search" />
+        <Radio id="referral" name="find" value="Referral" />
+        <Radio id="other" name="find" value="other" />
+      </div>
+    </div>
+
+    <div class="mb-12 flex flex-col gap-4">
+      <label for="details" class="text-xl"
+        >Can you tell us a little more about the project?</label
+      >
+      <div class="my-4 grid grid-cols-2 gap-8">
+        <input
+          type="text"
+          name="name"
+          placeholder="Name*"
+          required
+          class="border-light-1 flex-grow border-b bg-transparent focus:border-b-2 focus:outline-none focus:invalid:border-b-red-600"
+        />
+        <input
+          type="text"
+          name="brand"
+          placeholder="Brand*"
+          required
+          class="border-light-1 flex-grow border-b bg-transparent focus:border-b-2 focus:outline-none focus:invalid:border-b-red-600"
+        />
+      </div>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email*"
+        required
+        class="border-light-1 mb-4 flex-grow border-b bg-transparent focus:border-b-2 focus:outline-none focus:invalid:border-b-red-500"
+      />
+      <div class="mb-4 flex flex-col gap-2">
+        <textarea
+          name="message"
+          placeholder="Write us a message*"
+          class="border-light-1 min-h-20 flex-grow border-b bg-transparent invalid:border-b-red-600 focus:border-b-2 focus:outline-none"
+        ></textarea>
+        <p>
+          Please give us some details about your project and what you need help
+          with.
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-end">
+      <Button type="submit">Send Message</Button>
+    </div>
+  </form>
+</dialog>
+
+<style>
+  dialog::backdrop {
+    background-color: hsla(240, 70%, 4%, 0.6);
+  }
+</style>

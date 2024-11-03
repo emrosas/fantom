@@ -6,6 +6,8 @@ import Footer from "../components/Footer.astro";
 
 // Font imports
 import "@fontsource-variable/outfit";
+import ContactForm from "../components/ContactForm.astro";
+import DialogTest from "../components/DialogTest.astro";
 
 // Props type
 interface Props {
@@ -43,7 +45,9 @@ const { title, description } = Astro.props;
   >
     <Navbar />
     <slot />
+    <ContactForm />
     <Footer />
+    <script src="../utils/proposalModal.js"></script>
     <style is:global>
       @font-face {
         font-family: "Geist-Sans";
