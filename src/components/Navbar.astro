@@ -24,25 +24,25 @@ import Button from "./ui/Button.astro";
     class="invisible absolute left-0 right-0 top-nav flex flex-col gap-6 overflow-hidden bg-light px-4 py-6 sm:visible sm:static sm:flex sm:h-auto sm:flex-row sm:bg-none sm:p-0"
   >
     <nav
-      class="flex list-none flex-col gap-4 rounded-lg border-dark ~text-xs/base sm:flex-row sm:items-center sm:gap-0 sm:border-[1.5px]"
+      class="flex list-none flex-col gap-4 rounded-2xl border-dark border-opacity-10 px-2 ~text-xs/base sm:flex-row sm:items-center sm:gap-0 sm:border-[1.5px]"
     >
       <li
-        class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
+        class="rounded-lg text-xl transition duration-300 ease-out sm:px-4 sm:py-2 sm:text-base"
       >
         <a href="/#services">Servicios</a>
       </li>
       <li
-        class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
+        class="rounded-lg text-xl transition duration-300 ease-out sm:px-4 sm:py-2 sm:text-base"
       >
         <a href="/#projects">Proyectos Destacados</a>
       </li>
       <li
-        class="rounded-lg text-2xl transition duration-300 ease-out hover:bg-dark hover:bg-opacity-[3%] sm:px-4 sm:py-2 sm:text-base"
+        class="rounded-lg text-xl transition duration-300 ease-out sm:px-4 sm:py-2 sm:text-base"
       >
         <a href="#contact">Contactos</a>
       </li>
     </nav>
-    <Button proposal icon="arrow-fwd" intent={"secondary"}
+    <Button type="button" proposal icon="arrow-fwd" intent={"secondary"}
       >Solicitar Cotización</Button
     >
   </div>

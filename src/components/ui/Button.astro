@@ -4,13 +4,20 @@ import type { HTMLAttributes } from "astro/types";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const button = cva(
-  "px-4 rounded-lg py-2 flex items-center justify-center gap-2 transition duration-300 ease-out group ~text-sm/lg",
+  "px-5 rounded-2xl py-2 flex items-center justify-center gap-2 transition duration-300 ease-out group ~text-sm/lg",
   {
     variants: {
       intent: {
         primary: ["bg-brand", "hover:bg-brand-2", "text-light"],
-        secondary: ["bg-dark", "text-light"],
-        terciary: ["bg-dark", "bg-opacity-0", "hover:bg-opacity-10"],
+        secondary: ["bg-dark", "hover:bg-dark-2", "text-light"],
+        terciary: [
+          "bg-dark",
+          "bg-opacity-0",
+          "hover:bg-opacity-10",
+          "border",
+          "border-dark",
+          "border-opacity-10",
+        ],
       },
     },
   },
@@ -21,10 +28,15 @@ export interface Props
     VariantProps<typeof button> {
   icon?: string;
   proposal?: boolean;
-  type: "submit" | "reset" | "button";
+  type?: "submit" | "reset" | "button";
 }
 
-const { intent = "primary", icon, proposal, type } = Astro.props;
+const {
+  intent = "primary",
+  icon,
+  proposal = false,
+  type = "button",
+} = Astro.props;
 ---
 
 <button type={type} proposal-toggle={proposal} class={button({ intent })}>
