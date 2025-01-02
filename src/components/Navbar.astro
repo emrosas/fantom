@@ -3,9 +3,8 @@ import { Icon } from "astro-icon/components";
 import Button from "./ui/Button.astro";
 ---
 
-<header
-  id="nav"
-  class="sticky left-0 right-0 top-0 z-50 flex h-nav flex-col gap-6 border-b border-light border-opacity-10 bg-dark bg-opacity-75 py-6 backdrop-blur ~px-4/20 sm:h-auto sm:flex-row sm:items-center"
+<nav
+  class="sticky left-0 right-0 top-0 z-50 flex h-nav items-center justify-between border-b border-light border-opacity-10 bg-dark bg-opacity-75 py-6 backdrop-blur ~gap-4/6 ~px-4/20 sm:h-auto sm:justify-normal"
 >
   <a
     href="/"
@@ -14,26 +13,22 @@ import Button from "./ui/Button.astro";
     <Icon name="logo" class="hidden h-6 w-32 text-light sm:block" />
     <Icon name="eyes" class="size-8 text-light sm:hidden" />
   </a>
-  <button class="menu-toggle z-50" id="menu-toggle"
+  <button class="z-50" id="menu-toggle"
     ><Icon name="burger" class="size-9 sm:hidden" /></button
   >
-  <nav class="hidden flex-grow sm:flex sm:items-center sm:justify-between">
-    <ul class="flex flex-col gap-4 sm:flex-row sm:gap-8">
-      <li class="font-light">
-        <a href="/#services">Servicios</a>
-      </li>
-      <li class="font-light">
-        <a href="/#projects">Proyectos Destacados</a>
-      </li>
-      <li class="font-light">
-        <a href="#contact">Contactos</a>
-      </li>
-    </ul>
-    <Button type="button" proposal icon="arrow-fwd" intent={"secondary"}
-      >Solicitar Cotización</Button
-    >
-  </nav>
-</header>
+  <ul class="hidden flex-grow ~text-xs/base ~gap-4/8 sm:flex">
+    <li class="font-light transition ease-out hover:-translate-y-[1px]">
+      <a href="/#services">Servicios</a>
+    </li>
+    <li class="font-light transition ease-out hover:-translate-y-[1px]">
+      <a href="/#projects">Proyectos Destacados</a>
+    </li>
+    <li class="font-light transition ease-out hover:-translate-y-[1px]">
+      <a href="#contact">Contactos</a>
+    </li>
+  </ul>
+  <Button type="button" desktop={true} proposal>Solicitar Cotización</Button>
+</nav>
 <div
   id="menu-bg"
   class="menu-toggle fixed inset-0 z-40 hidden bg-dark bg-opacity-60 opacity-0 backdrop-blur"
