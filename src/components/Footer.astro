@@ -7,9 +7,9 @@ import Button from "./ui/Button.astro";
 
 <footer
   id="contact"
-  class="flex flex-col gap-8 rounded-t-[4rem] bg-dark pb-16 pt-20 text-light ~px-4/20 sm:pb-8"
+  class="flex flex-col gap-8 rounded-t-[4rem] bg-dark-2 pb-16 pt-20 text-light ~px-4/20 sm:pb-8"
 >
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-4">
     <!-- CTA and links -->
     <div class="flex flex-wrap items-start justify-between gap-16">
       <div class="flex flex-col sm:block">
@@ -18,28 +18,28 @@ import Button from "./ui/Button.astro";
           Envíenos un mensaje a través de uno de nuestros enlaces o completando
           nuestro formulario de contacto y comenzaremos lo antes posible.
         </p>
-        <Button icon="arrow-fwd">Solicitar Cotización</Button>
+        <Button>Solicitar Cotización</Button>
       </div>
       <ul
         class="flex max-w-[25rem] flex-wrap gap-6 border-l border-light pl-8 font-mono"
       >
         <li
-          class="font-mono uppercase transition-all duration-200 ease-out hover:text-brand hover:underline"
+          class="font-mono uppercase transition-all duration-200 ease-out hover:-translate-y-[1px] hover:text-brand-3 hover:underline"
         >
           <a href="/">wearefantomstudio@gmail.com</a>
         </li>
         <li
-          class="font-mono uppercase transition-all duration-200 ease-out hover:text-brand hover:underline"
+          class="font-mono uppercase transition-all duration-200 ease-out hover:-translate-y-[1px] hover:text-brand-3 hover:underline"
         >
           <a href="/">Instagram</a>
         </li>
         <li
-          class="font-mono uppercase transition-all duration-200 ease-out hover:text-brand hover:underline"
+          class="font-mono uppercase transition-all duration-200 ease-out hover:-translate-y-[1px] hover:text-brand-3 hover:underline"
         >
           <a href="/">Twitter</a>
         </li>
         <li
-          class="font-mono uppercase transition-all duration-200 ease-out hover:text-brand hover:underline"
+          class="font-mono uppercase transition-all duration-200 ease-out hover:-translate-y-[1px] hover:text-brand-3 hover:underline"
         >
           <a href="/">Solicitar Cotización</a>
         </li>
@@ -53,9 +53,11 @@ import Button from "./ui/Button.astro";
     class="flex flex-wrap items-center justify-center gap-8 sm:justify-between"
   >
     <p class="text-center font-mono ~text-xs/base sm:text-start">
-      Designed and Developed with ❤️ by Fantom Studio
+      For the world 🌐 from Fantom Studio
     </p>
-    <a href="/#top" class="flex gap-2 transition hover:text-brand"
+    <a
+      href="/#top"
+      class="flex gap-2 transition hover:-translate-y-[1px] hover:text-brand-3"
       ><span>Back to top</span> <Icon name="arrow-top" class="size-6" /></a
     >
   </div>
