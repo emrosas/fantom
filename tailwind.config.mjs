@@ -19,10 +19,11 @@ export default {
       },
       colors: {
         light: "#FCFCFC",
-        dark: "#0C0C46",
-        "dark-2": "#030311",
-        brand: "#4343EE",
-        "brand-2": "#0000FF",
+        dark: "#151516",
+        "dark-2": "#14102D",
+        brand: "#3131D8",
+        "brand-2": "#6868DE",
+        "brand-3": "#725CFF",
       },
       spacing: {
         page: "var(--page-main)",

@@ -5,47 +5,34 @@ import Button from "./ui/Button.astro";
 
 <header
   id="nav"
-  class="sticky left-0 right-0 top-0 z-50 flex h-nav flex-col justify-between bg-light bg-opacity-50 py-6 backdrop-blur ~px-4/20 sm:h-auto sm:flex-row sm:items-center"
+  class="sticky left-0 right-0 top-0 z-50 flex h-nav flex-col gap-6 border-b border-light border-opacity-10 bg-dark bg-opacity-75 py-6 backdrop-blur ~px-4/20 sm:h-auto sm:flex-row sm:items-center"
 >
-  <div class="flex justify-between gap-8">
-    <a
-      href="/"
-      class="transition duration-300 ease-out hover:-translate-y-[2px] hover:text-white"
-    >
-      <Icon name="logo" class="hidden h-6 w-32 text-dark sm:block" />
-      <Icon name="eyes" class="size-8 text-dark sm:hidden" />
-    </a>
-    <button class="menu-toggle z-50" id="menu-toggle"
-      ><Icon name="burger" class="size-9 sm:hidden" /></button
-    >
-  </div>
-  <div
-    id="menu"
-    class="invisible absolute left-0 right-0 top-nav flex flex-col gap-6 overflow-hidden bg-light px-4 py-6 sm:visible sm:static sm:flex sm:h-auto sm:flex-row sm:bg-none sm:p-0"
+  <a
+    href="/"
+    class="transition duration-300 ease-out hover:-translate-y-[2px] hover:text-white"
   >
-    <nav
-      class="flex list-none flex-col gap-4 rounded-2xl border-dark border-opacity-10 px-2 ~text-xs/base sm:flex-row sm:items-center sm:gap-0 sm:border-[1.5px]"
-    >
-      <li
-        class="rounded-lg text-xl transition duration-300 ease-out sm:px-4 sm:py-2 sm:text-base"
-      >
+    <Icon name="logo" class="hidden h-6 w-32 text-light sm:block" />
+    <Icon name="eyes" class="size-8 text-light sm:hidden" />
+  </a>
+  <button class="menu-toggle z-50" id="menu-toggle"
+    ><Icon name="burger" class="size-9 sm:hidden" /></button
+  >
+  <nav class="hidden flex-grow sm:flex sm:items-center sm:justify-between">
+    <ul class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+      <li class="font-light">
         <a href="/#services">Servicios</a>
       </li>
-      <li
-        class="rounded-lg text-xl transition duration-300 ease-out sm:px-4 sm:py-2 sm:text-base"
-      >
+      <li class="font-light">
         <a href="/#projects">Proyectos Destacados</a>
       </li>
-      <li
-        class="rounded-lg text-xl transition duration-300 ease-out sm:px-4 sm:py-2 sm:text-base"
-      >
+      <li class="font-light">
         <a href="#contact">Contactos</a>
       </li>
-    </nav>
+    </ul>
     <Button type="button" proposal icon="arrow-fwd" intent={"secondary"}
       >Solicitar Cotización</Button
     >
-  </div>
+  </nav>
 </header>
 <div
   id="menu-bg"

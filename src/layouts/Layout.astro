@@ -41,7 +41,7 @@ const { title, description } = Astro.props;
     />
   </head>
   <body
-    class="m-0 overflow-x-clip overscroll-none bg-light p-0 font-sans font-normal tracking-tighter text-dark"
+    class="m-0 overflow-x-clip overscroll-none bg-dark p-0 font-sans font-normal tracking-tighter text-light"
   >
     <Navbar />
     <slot />
@@ -66,6 +66,24 @@ const { title, description } = Astro.props;
       :root {
         /* Font variables */
         --nav-height: 4.5rem;
+        /* Color variables */
+        --dark: #151516;
+        --light: #fcfcfc;
+        --bg-color: var(--dark);
+        --text-color: var(--light);
+      }
+
+      p {
+        font-weight: 300;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 400;
       }
 
       .hide-scrollbar::-webkit-scrollbar {
