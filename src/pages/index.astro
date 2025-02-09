@@ -8,6 +8,7 @@ import ServiceCard from "../components/ServiceCard.astro";
 
 // Asset imports
 import hero from "../assets/hero.png";
+import heroGradient from "../assets/hero-gradient.png";
 
 // Data imports
 import { services } from "../utils/services";
@@ -21,29 +22,38 @@ import ProjectCard from "../components/ProjectCard.astro";
   <main>
     <!-- Hero -->
     <section id="top" class="flex flex-col items-center overflow-x-clip">
-      <div class="pb-24 ~px-4/56 ~pt-24/32">
-        <div class="flex flex-col items-center gap-4 text-center">
+      <div class="relative z-10 pb-24 ~px-4/56 ~pt-24/32">
+        <div class="flex max-w-xl flex-col items-center gap-4 text-center">
           <h1 class="text-balance leading-tight ~/lg:~text-3xl/5xl">
-            Desarrollamos Sitios Web <span class="text-brand-3"
-              >Generamos Conversiones</span
+            Developing Websites <span class="text-brand-3"
+              >Generating Conversions</span
             >
           </h1>
-          <p class="max-w-prose opacity-80 ~text-base/lg sm:text-balance">
-            Creamos experiencias web premium que ayudan a las marcas a alcanzar
-            sus objetivos y elevar la experiencia de sus usuarios.
+          <p class="max-w-prose opacity-80 ~text-base/lg">
+            We create premium web experiences that help brands achieve their
+            goals and elevate their users' experience.
           </p>
           <div class="mt-2 grid w-full ~gap-2/6 sm:w-auto sm:grid-cols-2">
-            <Button>Solicitar Cotización</Button>
-            <Button intent={"secondary"}>Ver Proyectos</Button>
+            <Button>Request a Proposal</Button>
+            <Button intent={"secondary"}>View Showcase</Button>
           </div>
         </div>
       </div>
-      <div class="w-[135%] sm:w-full">
+      <div class="relative z-20 w-[135%] sm:w-full">
         <Image src={hero} alt={"A set of glass cards"} />
       </div>
+      <Image
+        src={heroGradient}
+        alt={"A decorative gradient"}
+        aria-hidden
+        class={"absolute inset-0 w-full z-0"}
+      />
     </section>
     <!-- Services -->
-    <section class="flex flex-col pb-20 pt-32 ~gap-12/16 ~px-4/56">
+    <section
+      id="services"
+      class="flex flex-col pb-20 pt-32 ~gap-12/16 ~px-4/56"
+    >
       <div class="flex flex-wrap items-center ~gap-2/4">
         <h2 class="font-medium leading-tight ~text-4xl/5xl">
           Servicios para <span class="text-brand-3">triunfar en la web</span>
@@ -72,7 +82,10 @@ import ProjectCard from "../components/ProjectCard.astro";
       </div>
     </section>
     <!-- Projects -->
-    <section class="flex flex-col pb-32 pt-20 ~gap-12/16 ~px-4/56">
+    <section
+      id="projects"
+      class="flex flex-col pb-32 pt-20 ~gap-12/16 ~px-4/56"
+    >
       <div class="flex flex-wrap items-center ~gap-2/4">
         <h2 class="font-medium leading-tight ~text-4xl/5xl">
           Proyectos <span class="text-brand-3">Destacados</span>
@@ -133,18 +146,21 @@ import ProjectCard from "../components/ProjectCard.astro";
         />
         <aside class="row-start-4 sm:row-start-auto">
           <div
-            class="group/card relative flex flex-col items-start gap-6 overflow-clip rounded-lg bg-brand bg-opacity-5 p-8 transition duration-300 ease-out hover:bg-opacity-10"
+            class="group/card relative flex flex-col items-start overflow-clip rounded-lg border border-light/10 bg-light/[2%] p-8 transition duration-300 ease-out hover:bg-light/[5%]"
           >
-            <span class="font-mono text-xs opacity-40"
-              >Comenzar un proyecto</span
-            >
-            <h5 class="-mt-3 text-2xl">
-              ¿Estás listo para elevar el sitio web de tu marca?
-            </h5>
-            <Button>Solicitar una Cotización</Button>
+            <div class="max-w-72">
+              <h5 class="mb-2 text-2xl">
+                Ready to elevate your brand’s website?
+              </h5>
+              <p class="mb-4 text-xs font-light leading-relaxed opacity-60">
+                Generate more conversions and engage with your customer with a
+                unique web experience.
+              </p>
+              <Button>Solicitar una Cotización</Button>
+            </div>
             <Icon
               name="eyes"
-              class="absolute right-0 top-0 -z-10 h-40 w-52 -translate-x-8 translate-y-1/4 opacity-[1%] transition duration-500 ease-out group-hover/card:scale-105 group-hover/card:opacity-5"
+              class="absolute right-0 top-0 -z-10 h-52 w-64 translate-y-4 opacity-[1%] transition duration-500 ease-out group-hover/card:scale-105 group-hover/card:opacity-5"
             />
           </div>
         </aside>
