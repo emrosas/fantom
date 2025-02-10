@@ -9,6 +9,12 @@ import ServiceCard from "../components/ServiceCard.astro";
 // Asset imports
 import hero from "../assets/hero.png";
 import heroGradient from "../assets/hero-gradient.webp";
+// Projects
+import postreshop from "../assets/projects/postreshop.webp";
+import pgc from "../assets/projects/pgco.png";
+import postreria from "../assets/projects/postreria.png";
+import pasteleria from "../assets/projects/pasteleria.png";
+import wraps from "../assets/projects/wraps.png";
 
 // Data imports
 import { services } from "../utils/services";
@@ -93,7 +99,7 @@ import SectionTitle from "../components/SectionTitle.astro";
             name: "La Postre Shop",
             title:
               "A custom e-commerce website that generates sales and integrates with POS.",
-            image: { src: "/images/herrmat.jpg", alt: "Project Image" },
+            image: { src: postreshop, alt: "Project Image" },
             tags: ["Astro", "React", "TailwindCSS", "libSQL", "Vercel"],
           }}
         />
@@ -102,7 +108,7 @@ import SectionTitle from "../components/SectionTitle.astro";
             name: "Party Game Companion",
             title:
               "A web application that allows you to keep score and display an aesthetically pleasing leaderboard.",
-            image: { src: "/images/pgc.jpg", alt: "Project Image" },
+            image: { src: pgc, alt: "Project Image" },
             tags: ["React", "Vite", "Tailwind", "Zustand", "Netlify"],
           }}
           gridPlacement="sm:row-span-2"
@@ -112,7 +118,7 @@ import SectionTitle from "../components/SectionTitle.astro";
             name: "The Wrap Co.",
             title:
               "A marketing website that makes users crave their products and encourages them to visit the store.",
-            image: { src: "/images/twc.jpg", alt: "Project Image" },
+            image: { src: wraps, alt: "Project Image" },
             tags: ["Astro", "React", "TailwindCSS", "Netlify"],
           }}
           gridPlacement="sm:row-span-2"
@@ -122,7 +128,7 @@ import SectionTitle from "../components/SectionTitle.astro";
             name: "La Pastelería de La Postreria 77",
             title:
               "A landing page that explains this cake shop modern concept and turns visitors into customers.",
-            image: { src: "/images/lpdlp.jpg", alt: "Project Image" },
+            image: { src: pasteleria, alt: "Project Image" },
             tags: ["Astro", "React", "TailwindCSS", "libSQL", "Vercel"],
           }}
           gridPlacement="sm:row-span-2"
@@ -132,7 +138,7 @@ import SectionTitle from "../components/SectionTitle.astro";
             name: "La Postreria 77",
             title:
               "A clean and functional website with a QR menu powered by Webflow CMS.",
-            image: { src: "/images/lp.jpg", alt: "Project Image" },
+            image: { src: postreria, alt: "Project Image" },
             tags: ["Webflow", "Webflow CMS", "Lottie"],
           }}
           gridPlacement="sm:row-span-2"
